@@ -14,7 +14,7 @@ export default function Nav() {
     <nav className="bg-white p-3 sticky top-0 z-[999]">
       <div className="flex w-full justify-between items-center container mx-auto">
         <img
-          src="/assets/Alles charis Logo 2.png"
+          src="/assets/Alles Charis Logo 2.png"
           alt="logo"
           className="h-12"
         />
