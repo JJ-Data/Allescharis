@@ -6,21 +6,21 @@ import {Star, ChevronLeft, ChevronRight} from 'lucide-react';
 
 const testimonialData = [
     {
-        name: "John Doe",
-        role: "CEO, TechCorp",
-        text: "This product has revolutionized our workflow. Highly recommended!",
+        name: "Mr Segun",
+        role: "Customer Owo Station",
+        text: "I love coming to Alles Charis gas to fill my cylinder because I know my gas is going to be accurate, no cheating. I also love the way you people attend to me starting from the gate where your staff will help me carry my cylinder to the point where I pay money. Your customer service still remain the best in Owo.",
         rating: 5
     },
     {
-        name: "Jane Smith",
-        role: "Manager, RetailGiant",
-        text: "Exceptional service and support. It's been a game-changer for our team.",
+        name: "Mrs Belema",
+        role: "Customer Port Harcourt Station",
+        text: "I've purchased gas from here several times, and compared to other places I've bought from, your gas lasts longer. The customer service is also commendable I'd rate it 80%!",
         rating: 4
     },
     {
-        name: "Alex Johnson",
-        role: "Freelancer",
-        text: "I've tried many solutions, but this one stands out. It's intuitive and powerful.",
+        name: "Mrs Loveth",
+        role: "Customer Port Harcourt Station",
+        text: "The product is great, and the meter works well. I appreciate that it lasts long. You guys are doing an excellent job! ",
         rating: 5
     },
     {
