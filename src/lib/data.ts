@@ -34,19 +34,19 @@ export const manager = [
     },
     {
         name: "Omolola Balogun",
-        position: "Head of People",
+        position: "General Manager Administration",
         img: "/assets/px.jpg",
         linkedin: "https://www.linkedin.com/in/omololabalogun/",
     },
     {
         name: "Fayomi Peter",
-        position: "Head of Project",
+        position: "General Manager Project",
         img: "/assets/px2.jpg",
         linkedin: "https://www.linkedin.com/in/fayomi-peter-b-tech-mnse-mnistrcte-pmp-r-engr-61433ab8/",
     },
     {
         name: "Abdulgafar Sulyman",
-        position: "Operations Manager",
+        position: "General Manager Operations",
         img: "/assets/px3.jpg",
         linkedin: "https://www.linkedin.com/in/abdulgafar-sulyman/",
     },
@@ -58,7 +58,7 @@ export const manager = [
     },
     {
         name: "Mayowa Awoyemi",
-        position: "HR Manager",
+        position: "Head of People",
         img: "/assets/px5.jpg",
         linkedin: "https://www.linkedin.com/in/mayowaawoyemi/",
     },
