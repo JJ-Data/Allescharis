@@ -13,21 +13,30 @@ export default function About() {
               </p>
               <div className="space-y-6 text-gray-700 text-lg">
                 <p>
-                  Alles Charis Gas Limited (ACGL) is a pioneering company
-                  dedicated to being Nigeria's foremost end-to-end supplier of
-                  LPG and gas products. Founded in 2018, we have made it our
-                  mission to address critical industry issues, including erratic
-                  gas supply, high prices, and frequent shortages.
+                  Alles Charis Gas Limited (ACGL) is a leading indigenous energy
+                  company in Nigeria’s oil and gas industry, specializing in
+                  Liquefied Petroleum Gas (LPG). As a key player in the sector,
+                  we provide safe, efficient, and sustainable energy solutions,
+                  ensuring seamless access for individuals and businesses. With
+                  operations spanning production, storage, logistics, retail,
+                  and wholesale, ACGL remains committed to driving energy
+                  security and industry excellence across Nigeria.
                 </p>
                 <p>
-                  Our comprehensive services cover every aspect of the LPG
-                  supply chain, from production and storage to logistics,
-                  retail, wholesale, bulk sales for industrial users, and
-                  end-user consumption. At ACGL, we are committed to resolving
-                  key challenges in the industry such as price fluctuations,
-                  limited domestic LPG manufacturing, a lack of specialized
-                  logistics companies, innovation gaps, and product quality
-                  concerns.
+                  Driven by a commitment to excellence, ACGL has achieved
+                  remarkable growth, establishing a strong presence across three
+                  key regions in Nigeria. With a proven track record of
+                  reliability, including over 98% on-time delivery, our
+                  strategic expansion and customer-focused approach reinforce
+                  our position as a trusted industry leader in the LPG sector
+                </p>
+                <p>
+                  Additionally, beyond business, ACGL is dedicated to social
+                  impact—investing in medical outreach, educational
+                  scholarships, and youth empowerment initiatives. As an
+                  indigenous company with a global outlook, we continue to
+                  innovate and expand, delivering value-driven energy solutions
+                  that drive economic and social progress.
                 </p>
               </div>
             </div>
@@ -53,7 +62,9 @@ export default function About() {
               <p className="text-gray-700 text-lg">
                 To become a profitable business venture that provides safe and
                 dependable Liquefied Petroleum Gas (LPG) solutions that empower
-                our customers to meet their energy needs.
+                our customers to meet their energy needs establish by excellent
+                client service, on-time delivery, and continuous support of our
+                team members
               </p>
             </div>
 
@@ -62,9 +73,10 @@ export default function About() {
                 Vision
               </h3>
               <p className="text-gray-700 text-lg">
-                To lead the gas sub-sector of the Nigerian oil and gas industry
-                by providing exceptional Liquefied Petroleum Gas (LPG)
-                solutions.
+                To be a leader within the gas sub-sector of the Nigerian oil and
+                gas industry on Liquefied Petroleum Gas solutions by creating a
+                seamless chain of value-added service across the LPG supply
+                chain in Nigeria
               </p>
             </div>
           </div>
