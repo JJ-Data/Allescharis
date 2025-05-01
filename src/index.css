@@ -15,11 +15,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 220 80% 20%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 215 80% 95%;
+    --secondary-foreground: 220 80% 20%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -79,12 +79,12 @@
 
 .glassx {
   /* From https://css.glass */
-  background: rgba(0, 0, 102, 0.19);
+  background: rgba(0, 0, 140, 0.25);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 150, 0.2);
   backdrop-filter: blur(8.4px);
   -webkit-backdrop-filter: blur(8.4px);
-  border: 1px solid rgba(0, 0, 102, 0.37);
+  border: 1px solid rgba(0, 0, 150, 0.4);
 }
 
 .neu {
@@ -106,4 +106,125 @@
 /* Style your items */
 .my-masonry-grid_column > div {
   margin-bottom: 30px;
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-blue {
+  animation: pulseBlue 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulseBlue {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 150, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 150, 0);
+  }
+}
+
+/* Blue Glow Effects */
+.blue-glow {
+  box-shadow: 0 0 15px rgba(0, 0, 150, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.blue-glow:hover {
+  box-shadow: 0 0 25px rgba(0, 0, 150, 0.7);
+}
+
+.blue-gradient {
+  background: linear-gradient(135deg, #000066 0%, #0033cc 100%);
+}
+
+.blue-text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 150, 0.3);
 }
