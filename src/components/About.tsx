@@ -28,7 +28,7 @@ export default function About() {
                   key regions in Nigeria. With a proven track record of
                   reliability, including over 98% on-time delivery, our
                   strategic expansion and customer-focused approach reinforce
-                  our position as a trusted industry leader in the LPG sector
+                  our position as a trusted industry leader in the LPG sector.
                 </p>
                 <p>
                   Additionally, beyond business, ACGL is dedicated to social
@@ -64,7 +64,7 @@ export default function About() {
                 dependable Liquefied Petroleum Gas (LPG) solutions that empower
                 our customers to meet their energy needs establish by excellent
                 client service, on-time delivery, and continuous support of our
-                team members
+                team members.
               </p>
             </div>
 
@@ -76,7 +76,7 @@ export default function About() {
                 To be a leader within the gas sub-sector of the Nigerian oil and
                 gas industry on Liquefied Petroleum Gas solutions by creating a
                 seamless chain of value-added service across the LPG supply
-                chain in Nigeria
+                chain in Nigeria.
               </p>
             </div>
           </div>
