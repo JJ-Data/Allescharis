@@ -1,7 +1,7 @@
 import axiosInstance from "./axiosInstance";
-import axios from "axios"; // Import axios to detect Axios-specific errors
+import axios from "axios"; // Make sure to import axios
 
-// ✅ Admin/User Registration Function
+// Define the registration function
 export const registerUser = async (userData: {
   firstName: string;
   lastName: string;
@@ -12,28 +12,10 @@ export const registerUser = async (userData: {
   try {
     const response = await axiosInstance.post("/auth/register-admin", {
       ...userData,
-      role: "ADMIN", // Force role to ADMIN
+      role: "ADMIN",
     });
-
-    // ✅ Handle 204 No Content from backend (success but no response body)
-    if (response.status === 204) {
-      return {
-        success: true,
-        message: "Admin registered successfully (no content returned)",
-        token: "", // fallback token
-        user: {
-          id: "", // fallback id (optional)
-          name: `${userData.firstName} ${userData.lastName}`,
-          email: userData.email,
-          role: "ADMIN",
-        },
-      };
-    }
-
-    // ✅ Normal 200 OK response with expected data
     return response.data;
   } catch (error) {
-    // ❌ Error handling
     if (axios.isAxiosError(error)) {
       throw new Error(error.response?.data?.message || "Registration failed!");
     } else {
@@ -42,14 +24,13 @@ export const registerUser = async (userData: {
   }
 };
 
-// ✅ Login Function
 export const loginUser = async (userData: {
   email: string;
   password: string;
 }) => {
   try {
     const response = await axiosInstance.post("/auth/login", userData);
-    console.log("response from login:", response);
+    console.log("response from login in:", response);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -60,7 +41,6 @@ export const loginUser = async (userData: {
   }
 };
 
-// ✅ Session Check Function
 export const checkSession = async () => {
   try {
     const response = await axiosInstance.get("/auth/check-session");
