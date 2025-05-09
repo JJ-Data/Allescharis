@@ -9,8 +9,20 @@ import TeamPage from "./pages/TeamPage";
 import MediaPage from "./pages/MediaPage";
 import OfficePage from "./pages/OfficePage";
 import CareerPage from "./pages/Career";
+import BlogPage from "./pages/BlogPage";
+import AdminLayout from "./components/AdminLayout";
+import { AdminDashboard } from "./pages/AdminDashboard";
+import { AdminLoginPage } from "./pages/AdminLoginPage";
+import AdminRegisterPage from "./components/AdminRegisterPage";
+import { useAuth } from "./context/AuthContext";
+import { useEffect } from "react";
+import CreateBlogPage from "./pages/CreateBlogPage";
 
 export default function App() {
+  const { isAdmin, user } = useAuth();
+  useEffect(() => {
+    console.log("Current auth state:", { user, isAdmin });
+  }, [user, isAdmin]);
   return (
     <>
       <Nav />
@@ -21,9 +33,38 @@ export default function App() {
         <Route path="/stations" element={<OfficePage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/media" element={<MediaPage />} />
-
+        <Route path="/blog" element={<BlogPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/careers" element={<CareerPage />} />
+
+        {/* Admin auth routes */}
+        <Route path="/auth/admin/login" element={<AdminLoginPage />} />
+        <Route path="/auth/admin/register" element={<AdminRegisterPage />} />
+
+        <Route
+          path="/admin/dashboard"
+          element={
+            <AdminLayout>
+              <AdminDashboard />
+            </AdminLayout>
+          }
+        />
+        <Route
+          path="/admin/blogs/create"
+          element={
+            <AdminLayout>
+              <CreateBlogPage />
+            </AdminLayout>
+          }
+        />
+
+        {/* Protected admin routes */}
+        {/* <Route element={<ProtectedRoute adminOnly />}>
+          <Route element={<AdminLayout />}> */}
+        {/* <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/blogs/create" element={<CreateBlogPage />} /> */}
+        {/* </Route>
+        </Route> */}
       </Routes>
       <Footer />
     </>
