@@ -50,127 +50,91 @@ Message: ${data.message}
   };
 
   return (
-    <div className="bg-gradient-to-b from-blue-50 to-blue-100 py-16">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold text-blue-900 text-center mb-2 blue-text-glow">
-            Contact Us
-          </h2>
-          <p className="text-blue-700 text-center mb-8">
-            We'd love to hear from you. Please fill out this form.
-          </p>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="max-w-lg mx-auto p-6 bg-[#c9c9ff]/70 shadow-md rounded-lg"
+    >
+      <div className="mb-6">
+        <input
+          type="text"
+          id="name"
+          placeholder="Name"
+          {...register("name")}
+          className="w-full border-2 border-blue-300 focus:border-blue-500 focus:outline-none px-4 py-2 rounded-md text-black"
+        />
+        {errors.name && (
+          <div className="text-red-500 text-sm mt-1">{errors.name.message}</div>
+        )}
+      </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-blue-800 font-medium mb-2"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                {...register("name")}
-                className="w-full px-4 py-3 rounded-lg border border-blue-200 focus:border-blue-500 
-                  focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white/50 blue-glass"
-                placeholder="Your name"
-              />
-              {errors.name && (
-                <p className="mt-1 text-red-500">{errors.name.message}</p>
-              )}
+      <div className="flex flex-col md:flex-row gap-6">
+        <div className="mb-6 w-full">
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            {...register("email")}
+            className="w-full border-2 border-blue-300 focus:border-blue-500 focus:outline-none px-4 py-2 rounded-md text-black"
+          />
+          {errors.email && (
+            <div className="text-red-500 text-sm mt-1">
+              {errors.email.message}
             </div>
+          )}
+        </div>
 
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-blue-800 font-medium mb-2"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                {...register("email")}
-                className="w-full px-4 py-3 rounded-lg border border-blue-200 focus:border-blue-500 
-                  focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white/50 blue-glass"
-                placeholder="your.email@example.com"
-              />
-              {errors.email && (
-                <p className="mt-1 text-red-500">{errors.email.message}</p>
-              )}
+        <div className="mb-6 w-full">
+          <input
+            type="tel"
+            id="phoneNumber"
+            placeholder="Phone Number"
+            {...register("phoneNumber")}
+            className="w-full border-2 border-blue-300 focus:border-blue-500 focus:outline-none px-4 py-2 rounded-md text-black"
+          />
+          {errors.phoneNumber && (
+            <div className="text-red-500 text-sm mt-1">
+              {errors.phoneNumber.message}
             </div>
-
-            <div>
-              <label
-                htmlFor="phoneNumber"
-                className="block text-blue-800 font-medium mb-2"
-              >
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                {...register("phoneNumber")}
-                className="w-full px-4 py-3 rounded-lg border border-blue-200 focus:border-blue-500 
-                  focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white/50 blue-glass"
-                placeholder="Your phone number"
-              />
-              {errors.phoneNumber && (
-                <p className="mt-1 text-red-500">
-                  {errors.phoneNumber.message}
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label
-                htmlFor="subject"
-                className="block text-blue-800 font-medium mb-2"
-              >
-                Subject
-              </label>
-              <input
-                type="text"
-                {...register("subject")}
-                className="w-full px-4 py-3 rounded-lg border border-blue-200 focus:border-blue-500 
-                  focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white/50 blue-glass"
-                placeholder="Message subject"
-              />
-              {errors.subject && (
-                <p className="mt-1 text-red-500">{errors.subject.message}</p>
-              )}
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-blue-800 font-medium mb-2"
-              >
-                Message
-              </label>
-              <textarea
-                {...register("message")}
-                rows={6}
-                className="w-full px-4 py-3 rounded-lg border border-blue-200 focus:border-blue-500 
-                  focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white/50 blue-glass"
-                placeholder="Your message"
-              />
-              {errors.message && (
-                <p className="mt-1 text-red-500">{errors.message.message}</p>
-              )}
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg 
-                  transition-all duration-300 transform hover:scale-[1.02] blue-glow hover:blue-glow"
-              >
-                Send Message
-              </button>
-            </div>
-          </form>
+          )}
         </div>
       </div>
-    </div>
+
+      <div className="mb-6">
+        <input
+          type="text"
+          id="subject"
+          placeholder="Subject"
+          {...register("subject")}
+          className="w-full border-2 border-blue-300 focus:border-blue-500 focus:outline-none px-4 py-2 rounded-md text-black"
+        />
+        {errors.subject && (
+          <div className="text-red-500 text-sm mt-1">
+            {errors.subject.message}
+          </div>
+        )}
+      </div>
+
+      <div className="mb-6">
+        <textarea
+          id="message"
+          {...register("message")}
+          placeholder="Message"
+          className="w-full border-2 border-blue-300 focus:border-blue-500 focus:outline-none px-4 py-2 rounded-md resize-none h-32 text-black"
+        ></textarea>
+        {errors.message && (
+          <div className="text-red-500 text-sm mt-1">
+            {errors.message.message}
+          </div>
+        )}
+      </div>
+
+      <button
+        type="submit"
+        className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition duration-300"
+      >
+        Submit
+      </button>
+    </form>
   );
 };
 
