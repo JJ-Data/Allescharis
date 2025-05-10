@@ -6,32 +6,32 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 50% 98%;
     --foreground: 222.2 84% 4.9%;
 
-    --card: 0 0% 100%;
+    --card: 210 50% 98%;
     --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 0 0% 100%;
+    --popover: 210 50% 98%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 220 80% 20%;
+    --primary: 220 80% 25%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 215 80% 95%;
-    --secondary-foreground: 220 80% 20%;
+    --secondary: 215 80% 90%;
+    --secondary-foreground: 220 80% 25%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 210 50% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 210 70% 90%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 214.3 50% 91.4%;
+    --input: 214.3 50% 91.4%;
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
@@ -79,18 +79,18 @@
 
 .glassx {
   /* From https://css.glass */
-  background: rgba(0, 0, 140, 0.25);
+  background: rgba(0, 40, 180, 0.25);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 150, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 40, 180, 0.25);
   backdrop-filter: blur(8.4px);
   -webkit-backdrop-filter: blur(8.4px);
-  border: 1px solid rgba(0, 0, 150, 0.4);
+  border: 1px solid rgba(0, 40, 180, 0.4);
 }
 
 .neu {
   border-radius: 10px;
-  background: #ffffff;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  background: #f0f4ff;
+  box-shadow: 20px 20px 60px #d0d4e0, -20px -20px 60px #ffffff;
 }
 
 .my-masonry-grid {
@@ -227,4 +227,35 @@
 
 .blue-text-shadow {
   text-shadow: 0 2px 4px rgba(0, 0, 150, 0.3);
+}
+
+/* Additional Blue Theme Utilities */
+.blue-gradient-soft {
+  background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 50%, #f0f7ff 100%);
+}
+
+.blue-card {
+  background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 150, 0.1),
+    0 2px 4px -1px rgba(0, 0, 150, 0.06);
+}
+
+.blue-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.blue-hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 150, 0.2),
+    0 4px 6px -2px rgba(0, 0, 150, 0.1);
+}
+
+.bg-grid-blue-900 {
+  background-size: 40px 40px;
+  background-image: linear-gradient(
+      to right,
+      rgba(30, 58, 138, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(30, 58, 138, 0.1) 1px, transparent 1px);
 }

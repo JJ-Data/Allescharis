@@ -48,85 +48,62 @@ const TestimonialCard = ({
   text: string;
   rating: number;
 }) => (
-  <div className="bg-white shadow-lg rounded-lg p-6 m-4 max-w-sm mx-auto">
-    <div className="flex items-center mb-4">
+  <div className="blue-card p-6 m-4 max-w-sm mx-auto rounded-lg hover:blue-glow transition-all duration-300">
+    <div className="flex mb-4">
       {[...Array(5)].map((_, i) => (
         <Star
           key={i}
-          className={`w-5 h-5 ${
-            i < rating ? "text-yellow-400" : "text-gray-300"
+          className={`h-5 w-5 ${
+            i < rating ? "text-blue-500 fill-blue-500" : "text-gray-300"
           }`}
         />
       ))}
     </div>
-    <p className="text-gray-600 mb-4">{text}</p>
-    <div className="font-bold">{name}</div>
-    <div className="text-sm text-gray-500">{role}</div>
+    <p className="text-blue-800 mb-6 italic">{`"${text}"`}</p>
+    <div className="border-t border-blue-100 pt-4">
+      <h4 className="text-lg font-semibold text-blue-900">{name}</h4>
+      <p className="text-blue-600">{role}</p>
+    </div>
   </div>
 );
 
-const NavButton = ({
-  direction,
-  onClick,
-}: {
-  direction: string;
-  onClick: () => void;
-}) => (
-  <button
-    onClick={onClick}
-    className={`
-      absolute top-1/2 -translate-y-1/2 ${
-        direction === "prev" ? "left-4" : "right-4"
-      }
-      bg-white text-blue-600 rounded-full p-2 shadow-md hover:bg-blue-50 transition-colors duration-200
-      focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50
-    `}
-    aria-label={direction === "prev" ? "Previous" : "Next"}
-  >
-    {direction === "prev" ? (
-      <ChevronLeft size={24} />
-    ) : (
-      <ChevronRight size={24} />
-    )}
-  </button>
-);
-
-const Testimonial = () => {
-  const items = testimonialData.map((testimonial, index) => (
-    <TestimonialCard key={index} {...testimonial} />
-  ));
-
+export default function Testimonial() {
   return (
-    <section className="bg-gray-100 py-16 relative">
+    <div className="bg-gradient-to-b from-blue-50 to-blue-100 py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-semibold text-blue-900 text-center mb-4">
-          Testimonials
+        <h2 className="text-4xl font-bold text-center text-blue-900 blue-text-glow mb-12">
+          What Our Customers Say
         </h2>
-        <p className="text-xl text-gray-600 text-center mb-12">
-          What our clients from across the nation are saying
-        </p>
         <div className="relative">
           <AliceCarousel
             mouseTracking
-            items={items}
+            items={testimonialData.map((item) => (
+              <TestimonialCard key={item.name} {...item} />
+            ))}
             responsive={responsive}
             controlsStrategy="alternate"
             autoPlay
             autoPlayInterval={5000}
             infinite
-            keyboardNavigation
             renderPrevButton={() => (
-              <NavButton direction="prev" onClick={() => {}} />
+              <button
+                className="absolute left-0 top-1/2 -translate-y-1/2 p-2 rounded-full bg-blue-600/20 
+                hover:bg-blue-600/40 text-white transition-all duration-300 blue-glass"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
             )}
             renderNextButton={() => (
-              <NavButton direction="next" onClick={() => {}} />
+              <button
+                className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full bg-blue-600/20 
+                hover:bg-blue-600/40 text-white transition-all duration-300 blue-glass"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
             )}
-            disableDotsControls
           />
         </div>
       </div>
-    </section>
+    </div>
   );
-};
-
-export default Testimonial;
+}

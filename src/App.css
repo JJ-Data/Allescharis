@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+body {
+  background-color: #f0f7ff;
+  background-image: linear-gradient(to bottom right, #f0f7ff, #e6f0fd);
+  min-height: 100vh;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -12,10 +18,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #3b82f6aa);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #3b82f6aa);
 }
 
 @keyframes logo-spin {
