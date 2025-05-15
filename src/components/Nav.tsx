@@ -11,7 +11,7 @@ const navItems = [
   { name: "Stations", path: "/stations" },
   { name: "Our Team", path: "/team" },
   { name: "Media", path: "/media" },
-  { name: "Careers", path: "/careers" },
+  { name: "Opportunities", path: "/careers" },
 ];
 
 export default function Nav() {

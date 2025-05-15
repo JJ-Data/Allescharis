@@ -5,7 +5,7 @@ export default function OfficePage() {
     <div className="flex flex-col">
       <header className="shadow-lg relative w-full h-[65dvh]">
         <img
-          src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600"
+          src="/assets/stationbg.JPG"
           alt="hero_img"
           className="bg-cover bg-no-repeat w-full h-full object-cover absolute mix-blend-normal"
         />
