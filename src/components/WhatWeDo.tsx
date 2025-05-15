@@ -6,15 +6,23 @@ type TProps = {
 
 const Card = ({ title, subtitle, src }: TProps) => {
   return (
-    <div className="flex flex-col space-y-9 group transition-all duration-500">
+    <div
+      className="flex flex-col space-y-9 group transition-all duration-500 rounded-lg overflow-hidden 
+      shadow-md hover:shadow-xl blue-card blue-hover-effect"
+    >
       <img
         src={src}
         alt="what_we_do_img"
-        className="w-full object-cover object-center"
+        className="w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
       />
-      <div className="hidden flex-col space-y-8 px-5 group-hover:flex transition-all duration-500">
-        <h5 className="text-3xl font-semibold text-center">{title} </h5>
-        <p className="text-xl text-center">{subtitle}</p>
+      <div
+        className="hidden flex-col space-y-8 px-5 group-hover:flex transition-all duration-500 
+        blue-gradient-soft py-6 animate-fade-in"
+      >
+        <h5 className="text-3xl font-semibold text-center text-blue-900 blue-text-glow">
+          {title}
+        </h5>
+        <p className="text-xl text-center text-blue-800">{subtitle}</p>
       </div>
     </div>
   );
@@ -22,7 +30,7 @@ const Card = ({ title, subtitle, src }: TProps) => {
 
 export default function WhatWeDo() {
   return (
-    <div className="flex">
+    <div className="flex bg-gradient-to-b from-blue-50 to-blue-100 py-12">
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 max-w-5xl gap-8 px-5">
         <Card
           title="Production"

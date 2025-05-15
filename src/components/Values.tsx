@@ -17,11 +17,11 @@ export default function Values() {
             <p className="w-1/3 text-center text-lg md:text-2xl font-semibold">
               Integrity
             </p>
-            <div className="w-2/3 sm:p-6 md:p-10 lg:p-16 rounded-full rounded-br-none bg-gray-300">
+            <div className="w-2/3 sm:p-6 md:p-10 lg:p-16 rounded-full rounded-br-none bg-blue-200">
               <img
                 src="/assets/Ellipse 1.png"
                 alt="ellipse_1"
-                className="border border-gray-200 shadow-lg rounded-full"
+                className="border border-blue-300 shadow-lg rounded-full"
               />
             </div>
           </div>
@@ -29,7 +29,7 @@ export default function Values() {
             <p className="w-1/3 text-center text-lg md:text-2xl font-semibold order-2">
               Respect
             </p>
-            <div className="order-1 w-2/3 sm:p-6 md:p-10 lg:p-16 rounded-full rounded-bl-none bg-blue-900">
+            <div className="order-1 w-2/3 sm:p-6 md:p-10 lg:p-16 rounded-full rounded-bl-none bg-blue-700">
               <img
                 src="/assets/Ellipse 2.png"
                 alt="ellipse_2"
@@ -41,7 +41,7 @@ export default function Values() {
             <p className="w-1/3 text-center text-lg md:text-2xl font-semibold">
               Dependability
             </p>
-            <div className="w-2/3 sm:p-6 md:p-10 lg:p-16 rounded-full rounded-tr-none bg-blue-900">
+            <div className="w-2/3 sm:p-6 md:p-10 lg:p-16 rounded-full rounded-tr-none bg-blue-700">
               <img
                 src="/assets/Depend.png"
                 alt="ellipse_3"
@@ -53,16 +53,16 @@ export default function Values() {
             <p className="order-2 w-1/3 text-center text-lg md:text-2xl font-semibold">
               Efficiency
             </p>
-            <div className="order-1 w-2/3 sm:p-6 md:p-10 lg:p-16 rounded-full rounded-tl-none bg-gray-300">
+            <div className="order-1 w-2/3 sm:p-6 md:p-10 lg:p-16 rounded-full rounded-tl-none bg-blue-200">
               <img
                 src="/assets/ic.jpg"
                 alt="ellipse_1"
-                className="border border-gray-200 shadow-lg rounded-full"
+                className="border border-blue-300 shadow-lg rounded-full"
               />
             </div>
           </div>
           {/* Dependability */}
-          <div className="h-24 w-24 sm:h-40 sm:w-40 md:h-52 md:w-52 lg:h-60 lg:w-60 bg-white absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center rounded-full group-hover:scale-75 duration-500">
+          <div className="h-24 w-24 sm:h-40 sm:w-40 md:h-52 md:w-52 lg:h-60 lg:w-60 bg-blue-50 absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center rounded-full group-hover:scale-75 duration-500 border-4 border-blue-300 shadow-lg shadow-blue-200">
             <img
               src="/assets/ix.jpeg"
               alt="logo-center"
@@ -79,7 +79,7 @@ export default function Values() {
                     d="M50,10 a40,40 0 1,1 0,80 a40,40 0 1,1 0,-80"
                     fill="none"
                   />
-                  <text fontSize="10" className="font-bold">
+                  <text fontSize="10" className="font-bold text-blue-900">
                     <textPath xlinkHref="#curve" startOffset="0">
                       Innovation
                     </textPath>
