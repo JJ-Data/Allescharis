@@ -15,7 +15,9 @@ function CreateBlogPage() {
   const navigate = useNavigate();
   const { user } = useAuth();
 
-  const cloudUrl = `${import.meta.env.VITE_PUBLIC_CLOUDINARY_CLOUD_NAME}`;
+  // ✅ Correct Cloudinary setup using cloud name (not full URL)
+  const cloudName = import.meta.env.VITE_PUBLIC_CLOUDINARY_CLOUD_NAME;
+  const cloudUrl = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
   const uploadPreset = import.meta.env.VITE_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
 
   const onDrop = useCallback(
