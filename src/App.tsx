@@ -17,6 +17,7 @@ import AdminRegisterPage from "./components/AdminRegisterPage";
 import { useAuth } from "./context/AuthContext";
 import { useEffect } from "react";
 import CreateBlogPage from "./pages/CreateBlogPage";
+import BlogDetailPage from "./pages/BlogDetailPage";
 
 export default function App() {
   const { isAdmin, user } = useAuth();
@@ -66,6 +67,7 @@ export default function App() {
         {/* </Route>
         </Route> */}
       </Routes>
+      <Route path="/blogs/:id" element={<BlogDetailPage />} />
       <Footer />
     </>
   );
