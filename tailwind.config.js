@@ -86,6 +86,10 @@ module.exports = {
           "0%": { opacity: "0", transform: "translateX(20px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
+        "fade-in-up-scale": {
+          "0%": { opacity: "0", transform: "translateY(20px) scale(0.95)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
         "pulse-blue": {
           "0%, 100%": {
             boxShadow: "0 0 0 0 rgba(0, 0, 150, 0.4)",
@@ -107,6 +111,7 @@ module.exports = {
         "fade-in-down": "fade-in-down 0.7s ease-out",
         "fade-in-left": "fade-in-left 0.7s ease-out",
         "fade-in-right": "fade-in-right 0.7s ease-out",
+        "fade-in-up-scale": "fade-in-up-scale 0.7s ease-out",
         "pulse-blue": "pulse-blue 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         float: "float 3s ease-in-out infinite",
       },
