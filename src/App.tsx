@@ -58,6 +58,7 @@ export default function App() {
             </AdminLayout>
           }
         />
+        <Route path="/blogs/:id" element={<BlogDetailPage />} />
 
         {/* Protected admin routes */}
         {/* <Route element={<ProtectedRoute adminOnly />}>
@@ -67,7 +68,6 @@ export default function App() {
         {/* </Route>
         </Route> */}
       </Routes>
-      <Route path="/blogs/:id" element={<BlogDetailPage />} />
       <Footer />
     </>
   );
