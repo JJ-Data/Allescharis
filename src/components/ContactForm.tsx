@@ -22,31 +22,27 @@ const ContactForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
+    reset,
   } = useForm<FormValues>({
     resolver: zodResolver(validationSchema),
   });
-  const onSubmit = (data: FormValues) => {
-    // Create the email body with form data
-    const emailBody = `
-Name: ${data.name}
-Email: ${data.email}
-Phone Number: ${data.phoneNumber}
-Subject: ${data.subject}
-Message: ${data.message}
-    `.trim();
 
-    // Encode the subject and body for the mailto URL
-    const encodedSubject = encodeURIComponent(data.subject);
-    const encodedBody = encodeURIComponent(emailBody);
+  const onSubmit = async (data: FormValues) => {
+    const formData = new FormData();
+    formData.append("access_key", "1799ad1f-c8b9-44bb-8a05-c28b70cacf1c");
+    formData.append("subject", data.subject);
+    formData.append("name", data.name);
+    formData.append("email", data.email);
+    formData.append("phone", data.phoneNumber);
+    formData.append("message", data.message);
 
-    // Create the mailto URL with prefilled information
-    const mailtoUrl = `mailto:contact@allescharis.com?subject=${encodedSubject}&body=${encodedBody}`;
+    await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
 
-    // Open the default mail client
-    window.location.href = mailtoUrl;
-
-    console.log(data);
+    reset();
   };
 
   return (
@@ -54,13 +50,17 @@ Message: ${data.message}
       onSubmit={handleSubmit(onSubmit)}
       className="max-w-lg mx-auto p-6 bg-[#c9c9ff]/70 shadow-md rounded-lg"
     >
+      <input
+        type="hidden"
+        name="access_key"
+        value="YOUR_WEB3FORMS_ACCESS_KEY"
+      />
       <div className="mb-6">
         <input
           type="text"
-          id="name"
           placeholder="Name"
           {...register("name")}
-          className="w-full border-2 border-blue-300 focus:border-blue-500 focus:outline-none px-4 py-2 rounded-md text-black"
+          className="w-full border-2 border-blue-300 px-4 py-2 rounded-md text-black"
         />
         {errors.name && (
           <div className="text-red-500 text-sm mt-1">{errors.name.message}</div>
@@ -71,10 +71,9 @@ Message: ${data.message}
         <div className="mb-6 w-full">
           <input
             type="email"
-            id="email"
             placeholder="Email"
             {...register("email")}
-            className="w-full border-2 border-blue-300 focus:border-blue-500 focus:outline-none px-4 py-2 rounded-md text-black"
+            className="w-full border-2 border-blue-300 px-4 py-2 rounded-md text-black"
           />
           {errors.email && (
             <div className="text-red-500 text-sm mt-1">
@@ -86,10 +85,9 @@ Message: ${data.message}
         <div className="mb-6 w-full">
           <input
             type="tel"
-            id="phoneNumber"
             placeholder="Phone Number"
             {...register("phoneNumber")}
-            className="w-full border-2 border-blue-300 focus:border-blue-500 focus:outline-none px-4 py-2 rounded-md text-black"
+            className="w-full border-2 border-blue-300 px-4 py-2 rounded-md text-black"
           />
           {errors.phoneNumber && (
             <div className="text-red-500 text-sm mt-1">
@@ -102,10 +100,9 @@ Message: ${data.message}
       <div className="mb-6">
         <input
           type="text"
-          id="subject"
           placeholder="Subject"
           {...register("subject")}
-          className="w-full border-2 border-blue-300 focus:border-blue-500 focus:outline-none px-4 py-2 rounded-md text-black"
+          className="w-full border-2 border-blue-300 px-4 py-2 rounded-md text-black"
         />
         {errors.subject && (
           <div className="text-red-500 text-sm mt-1">
@@ -116,10 +113,9 @@ Message: ${data.message}
 
       <div className="mb-6">
         <textarea
-          id="message"
-          {...register("message")}
           placeholder="Message"
-          className="w-full border-2 border-blue-300 focus:border-blue-500 focus:outline-none px-4 py-2 rounded-md resize-none h-32 text-black"
+          {...register("message")}
+          className="w-full border-2 border-blue-300 px-4 py-2 rounded-md resize-none h-32 text-black"
         ></textarea>
         {errors.message && (
           <div className="text-red-500 text-sm mt-1">
@@ -131,9 +127,16 @@ Message: ${data.message}
       <button
         type="submit"
         className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition duration-300"
+        disabled={isSubmitting}
       >
-        Submit
+        {isSubmitting ? "Sending..." : "Submit"}
       </button>
+
+      {isSubmitSuccessful && (
+        <p className="text-green-600 text-sm mt-4 text-center">
+          Message sent successfully!
+        </p>
+      )}
     </form>
   );
 };
