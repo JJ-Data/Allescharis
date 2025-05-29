@@ -6,7 +6,7 @@ export default function CSRPage() {
         <img
           src="/assets/Csrbg.jpg"
           alt="CSR background"
-          className="absolute w-full h-full object-cover mix-blend-normal"
+          className="absolute w-full h-full object-cover"
         />
         <div className="absolute bg-[#00005B]/70 w-full h-full flex flex-col justify-center items-center text-white text-center px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -22,7 +22,7 @@ export default function CSRPage() {
 
       {/* CSR Cards Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-16 bg-gray-50 text-gray-900">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
           {[
             {
               number: "1",
@@ -69,12 +69,12 @@ export default function CSRPage() {
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300"
+              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group"
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="p-6">
                 <div className="flex items-center mb-4">
@@ -87,6 +87,26 @@ export default function CSRPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="bg-[#00005B] text-white py-20 text-center px-4">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Join Our CSR Drive
+          </h2>
+          <p className="text-lg md:text-xl mb-8">
+            Partner with us to make lasting impact across communities. Whether
+            you're an individual, an NGO, or a corporate body—there’s room at
+            the table for shared progress.
+          </p>
+          <a
+            href="/contact"
+            className="inline-block bg-white text-[#00005B] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition"
+          >
+            Get Involved
+          </a>
         </div>
       </section>
     </div>
