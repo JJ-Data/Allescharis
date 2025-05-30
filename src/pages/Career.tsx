@@ -17,7 +17,7 @@ export default function CareersPage() {
         </p>
 
         <p className="text-lg text-center mb-12 text-gray-600">
-          Hiring Guideline: Stay Tuned On Linkedin
+          Hiring Guideline: Stay Tuned On LinkedIn
         </p>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -28,7 +28,7 @@ export default function CareersPage() {
               <h2 className="text-2xl font-semibold">Job Location</h2>
             </div>
             <p className="mb-4">You're one step closer to your dream job.</p>
-            <div className="relative">
+            <div className="relative mb-4">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="w-full px-4 py-2 text-left bg-gray-100 rounded-md flex items-center justify-between"
@@ -36,7 +36,7 @@ export default function CareersPage() {
                 {selectedLocation || "Select a location"}
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${
-                    isDropdownOpen ? "transform rotate-180" : ""
+                    isDropdownOpen ? "rotate-180" : ""
                   }`}
                 />
               </button>
@@ -57,6 +57,14 @@ export default function CareersPage() {
                 </div>
               )}
             </div>
+            <a
+              href="https://www.linkedin.com/company/alles-charis/jobs/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-blue-900 text-white px-4 py-2 rounded-md hover:bg-blue-800 transition"
+            >
+              Check Application
+            </a>
           </div>
 
           {/* NYSC Internship Section */}
@@ -70,11 +78,17 @@ export default function CareersPage() {
               corps members in Abuja, Ondo or Port Harcourt the chance to dive
               into real-world experience.
             </p>
-            <p>
+            <p className="mb-4">
               This program equips you with essential skills, meaningful industry
               exposure, and valuable connections to kickstart your professional
               journey.
             </p>
+            <a
+              href="/internship"
+              className="inline-block bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition"
+            >
+              Learn More
+            </a>
           </div>
 
           {/* Retailer Community Section */}
@@ -88,7 +102,7 @@ export default function CareersPage() {
               href="https://chat.whatsapp.com/your-group-link"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors"
+              className="inline-block bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition"
             >
               Join our WhatsApp Community
             </a>

@@ -11,12 +11,19 @@ const navItems = [
   { name: "Stations", path: "/stations" },
   { name: "Our Team", path: "/team" },
   { name: "Media", path: "/media" },
-  { name: "Opportunities", path: "/careers" },
+];
+
+const opportunitiesDropdown = [
+  { name: "CSR", path: "/csr" },
+  { name: "Careers", path: "/careers" },
+  { name: "Internship", path: "/internship" },
 ];
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  let dropdownTimeout: NodeJS.Timeout;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,9 +34,7 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <motion.nav
@@ -55,6 +60,7 @@ export default function Nav() {
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
+
         <div
           className={`${
             isOpen ? "flex" : "hidden"
@@ -69,12 +75,47 @@ export default function Nav() {
             >
               <NavLink
                 to={item.path}
+                onClick={() => setIsOpen(false)}
                 className="text-base text-gray-700 hover:text-blue-900 font-semibold aria-[current=page]:text-blue-800 aria-[current=page]:hover:text-gray-500 py-1.5 px-4 rounded-sm transition-all duration-500"
               >
                 {item.name}
               </NavLink>
             </motion.div>
           ))}
+
+          {/* Opportunities Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => {
+              clearTimeout(dropdownTimeout);
+              setDropdownOpen(true);
+            }}
+            onMouseLeave={() => {
+              dropdownTimeout = setTimeout(() => setDropdownOpen(false), 200);
+            }}
+          >
+            <button className="text-base text-gray-700 hover:text-blue-900 font-semibold py-1.5 px-4 rounded-sm transition-all duration-500">
+              Opportunities
+            </button>
+            {dropdownOpen && (
+              <div className="absolute top-full left-0 bg-white shadow-lg mt-2 rounded-md w-48 z-50">
+                {opportunitiesDropdown.map((item) => (
+                  <NavLink
+                    key={item.name}
+                    to={item.path}
+                    onClick={() => {
+                      setIsOpen(false);
+                      setDropdownOpen(false);
+                    }}
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-900 transition duration-300"
+                  >
+                    {item.name}
+                  </NavLink>
+                ))}
+              </div>
+            )}
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}

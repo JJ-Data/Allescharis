@@ -19,6 +19,7 @@ import { useEffect } from "react";
 import CreateBlogPage from "./pages/CreateBlogPage";
 import BlogDetailPage from "./pages/BlogDetailPage";
 import CSRPage from "./pages/Csr";
+import InternshipPage from "./pages/Internship";
 
 export default function App() {
   const { isAdmin, user } = useAuth();
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/careers" element={<CareerPage />} />
         <Route path="/csr" element={<CSRPage />} />
+        <Route path="/internship" element={<InternshipPage />} />
 
         {/* Admin auth routes */}
         <Route path="/auth/admin/login" element={<AdminLoginPage />} />
