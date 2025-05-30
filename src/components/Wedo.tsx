@@ -1,5 +1,3 @@
-import React from "react";
-
 type TProps = {
   title: string;
   subtitle: string;
