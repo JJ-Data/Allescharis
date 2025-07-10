@@ -1,5 +1,7 @@
 // components/admin/BlogTable.tsx
 import { Link } from "react-router-dom";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { deleteBlog } from "@/services/blogs";
 
 interface Blog {
   id: string;
@@ -16,6 +18,14 @@ interface BlogTableProps {
 }
 
 export function BlogTable({ blogs }: BlogTableProps) {
+  const queryClient = useQueryClient();
+  const deleteMutation = useMutation({
+    mutationFn: deleteBlog,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-blogs"] });
+    },
+  });
+
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full divide-y divide-gray-200">
@@ -62,7 +72,11 @@ export function BlogTable({ blogs }: BlogTableProps) {
                 </Link>
                 <button
                   className="text-red-600 hover:text-red-900"
-                  onClick={() => console.log("Delete", blog.id)}
+                  onClick={() => {
+                    if (window.confirm("Delete this blog?")) {
+                      deleteMutation.mutate(blog.id);
+                    }
+                  }}
                 >
                   Delete
                 </button>

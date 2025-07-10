@@ -4,6 +4,7 @@ import { checkAdminSession, loginAdmin, registerAdmin } from "@/services/admin";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth } from "@/context/AuthContext";
+import { IUser } from "@/lib/types";
 
 export const useRegisterAdmin = () => {
   const navigate = useNavigate();
@@ -30,17 +31,29 @@ export const useRegisterAdmin = () => {
 export const useLoginAdmin = () => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-  const { checkAdmin } = useAuth();
+  const { checkAdmin, login } = useAuth();
 
   return useMutation({
     mutationFn: loginAdmin,
     onSuccess: async (data) => {
-      if (data.success && data.token) {
+      if (data.success && data.token && data.user) {
         localStorage.setItem("token", data.token);
+        const nameParts = data.user.name ? data.user.name.split(" ") : ["", ""];
+        const userData: IUser = {
+          id: data.user.id,
+          firstName: nameParts[0] ?? "",
+          lastName: nameParts.slice(1).join(" ") ?? "",
+          email: data.user.email,
+          role: data.user.role,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        };
+
+        await login(userData, data.token);
         await checkAdmin();
         queryClient.invalidateQueries({ queryKey: ["admin"] });
         toast.success("Logged in successfully");
-        navigate("/dashboard");
+        navigate("/dashboard", { replace: true });
       }
     },
     onError: (error: Error) => {

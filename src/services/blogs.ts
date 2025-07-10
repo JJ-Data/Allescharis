@@ -48,3 +48,28 @@ export const createBlog = async (blogData: {
     throw new Error("Blog creation failed");
   }
 };
+
+export const updateBlog = async (
+  id: string,
+  blogData: { title: string; content: string; images: string[] }
+): Promise<void> => {
+  try {
+    await axiosInstance.put(`/blogs/${id}`, blogData);
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(error.response?.data?.message || "Blog update failed!");
+    }
+    throw new Error("Blog update failed");
+  }
+};
+
+export const deleteBlog = async (id: string): Promise<void> => {
+  try {
+    await axiosInstance.delete(`/blogs/${id}`);
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(error.response?.data?.message || "Blog deletion failed!");
+    }
+    throw new Error("Blog deletion failed");
+  }
+};

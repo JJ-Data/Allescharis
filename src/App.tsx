@@ -18,6 +18,7 @@ import { useAuth } from "./context/AuthContext";
 import { useEffect } from "react";
 import CreateBlogPage from "./pages/CreateBlogPage";
 import BlogDetailPage from "./pages/BlogDetailPage";
+import EditBlogPage from "./pages/EditBlogPage";
 import CSRPage from "./pages/Csr";
 import InternshipPage from "./pages/Internship";
 import UserManagementPage from "./pages/UserManagementPage";
@@ -60,6 +61,14 @@ export default function App() {
           element={
             <AdminLayout>
               <CreateBlogPage />
+            </AdminLayout>
+          }
+        />
+        <Route
+          path="/admin/blogs/edit/:id"
+          element={
+            <AdminLayout>
+              <EditBlogPage />
             </AdminLayout>
           }
         />
