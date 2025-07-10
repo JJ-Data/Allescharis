@@ -4,7 +4,7 @@ export interface IUser {
   firstName: string;
   lastName: string;
   email: string;
-  role: "USER" | "ADMIN";
+  role: "USER" | "ADMIN" | "super-admin" | "editor";
   createdAt?: Date;
   updatedAt?: Date;
 }

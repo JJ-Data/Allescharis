@@ -66,7 +66,10 @@ function CreateBlogPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!user || user.role !== "ADMIN") {
+    if (
+      !user ||
+      !["ADMIN", "super-admin", "editor"].includes(user.role)
+    ) {
       setError("Only admins can create blog posts");
       return;
     }

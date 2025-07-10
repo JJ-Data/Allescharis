@@ -4,7 +4,7 @@ import { useAuth } from "@/context/AuthContext";
 
 export function AdminSidebar() {
   const { pathname } = useLocation();
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
 
   const isActive = (path: string) => pathname.startsWith(path);
 
@@ -37,16 +37,34 @@ export function AdminSidebar() {
               <span>Create Blog</span>
             </Link>
           </li>
-          <li>
-            <Link
-              to="/dashboard/users"
-              className={`flex items-center p-2 rounded-md ${
-                isActive("/dashboard/users") ? "bg-gray-700" : "hover:bg-gray-700"
-              }`}
-            >
-              <span>User Management</span>
-            </Link>
-          </li>
+          {user?.role === "super-admin" && (
+            <>
+              <li>
+                <Link
+                  to="/dashboard/users"
+                  className={`flex items-center p-2 rounded-md ${
+                    isActive("/dashboard/users")
+                      ? "bg-gray-700"
+                      : "hover:bg-gray-700"
+                  }`}
+                >
+                  <span>User Management</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/dashboard/admins"
+                  className={`flex items-center p-2 rounded-md ${
+                    isActive("/dashboard/admins")
+                      ? "bg-gray-700"
+                      : "hover:bg-gray-700"
+                  }`}
+                >
+                  <span>Admin Users</span>
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
         <div className="mt-8 pt-4 border-t border-gray-700">
           <button

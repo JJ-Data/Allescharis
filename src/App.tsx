@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import AboutPage from "./pages/AboutPage";
@@ -22,6 +22,7 @@ import EditBlogPage from "./pages/EditBlogPage";
 import CSRPage from "./pages/Csr";
 import InternshipPage from "./pages/Internship";
 import UserManagementPage from "./pages/UserManagementPage";
+import AdminUsersManagementPage from "./pages/AdminUsersManagementPage";
 
 export default function App() {
   const { isAdmin, user } = useAuth();
@@ -77,7 +78,19 @@ export default function App() {
           path="/dashboard/users"
           element={
             <AdminLayout>
-              <UserManagementPage />
+              {user?.role === "super-admin" ? (
+                <UserManagementPage />
+              ) : (
+                <Navigate to="/dashboard" replace />
+              )}
+            </AdminLayout>
+          }
+        />
+        <Route
+          path="/dashboard/admins"
+          element={
+            <AdminLayout>
+              <AdminUsersManagementPage />
             </AdminLayout>
           }
         />

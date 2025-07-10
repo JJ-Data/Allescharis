@@ -33,22 +33,21 @@ function AdminRegisterPage() {
 
     try {
       const response = await registerAdmin({
-        firstName: formData.firstName,
-        lastName: formData.lastName,
+        name: `${formData.firstName} ${formData.lastName}`,
         email: formData.email,
         password: formData.password,
-        confirmPassword: formData.confirmPassword,
+        role: "super-admin",
       });
 
       if (response.success && response.token && response.user) {
         localStorage.setItem("token", response.token);
-        // Create a complete user object that matches IUser
+        const nameParts = response.user.name.split(" ");
         const userData = {
-          id: response?.user?.id,
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          role: response?.user?.role,
+          id: response.user.id,
+          firstName: nameParts[0] || "",
+          lastName: nameParts.slice(1).join(" "),
+          email: response.user.email,
+          role: response.user.role,
           createdAt: new Date(),
           updatedAt: new Date(),
         };
