@@ -17,9 +17,9 @@ export function AdminSidebar() {
         <ul className="space-y-2">
           <li>
             <Link
-              to="/admin/dashboard"
+              to="/dashboard"
               className={`flex items-center p-2 rounded-md ${
-                isActive("/admin/dashboard")
+                isActive("/dashboard")
                   ? "bg-gray-700"
                   : "hover:bg-gray-700"
               }`}
@@ -39,9 +39,9 @@ export function AdminSidebar() {
           </li>
           <li>
             <Link
-              to="/admin/users"
+              to="/dashboard/users"
               className={`flex items-center p-2 rounded-md ${
-                isActive("/admin/users") ? "bg-gray-700" : "hover:bg-gray-700"
+                isActive("/dashboard/users") ? "bg-gray-700" : "hover:bg-gray-700"
               }`}
             >
               <span>User Management</span>

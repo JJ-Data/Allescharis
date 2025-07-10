@@ -54,7 +54,7 @@ function AdminRegisterPage() {
         };
         await login(userData, response.token);
         toast.success("Admin account created successfully!");
-        navigate("/admin/dashboard", { replace: true });
+        navigate("/dashboard", { replace: true });
       }
     } catch (error) {
       toast.error(

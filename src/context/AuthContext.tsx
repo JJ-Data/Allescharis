@@ -101,7 +101,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(null);
     setIsAdmin(false);
     localStorage.removeItem("token");
-    window.location.href = "/auth/admin/login";
+    window.location.href = "/login";
   };
 
   const value = {

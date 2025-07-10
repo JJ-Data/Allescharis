@@ -8,14 +8,14 @@ interface Props {
 }
 
 export default function AdminLayout({ children }: Props) {
-  const { isAdmin, isLoading, isAuthenticated } = useAuth();
+  const { isLoading, isAuthenticated } = useAuth();
 
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
-  if (!isAuthenticated && isAdmin) {
-    return <Navigate to="/auth/admin/login" />;
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
   }
   return (
     <div className="flex h-screen bg-gray-100">

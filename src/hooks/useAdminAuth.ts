@@ -18,7 +18,7 @@ export const useRegisterAdmin = () => {
         await checkAdmin();
         queryClient.invalidateQueries({ queryKey: ["admin"] });
         toast.success("Admin account created successfully");
-        navigate("/admin/dashboard");
+        navigate("/dashboard");
       }
     },
     onError: (error: Error) => {
@@ -40,7 +40,7 @@ export const useLoginAdmin = () => {
         await checkAdmin();
         queryClient.invalidateQueries({ queryKey: ["admin"] });
         toast.success("Logged in successfully");
-        navigate("/admin/dashboard");
+        navigate("/dashboard");
       }
     },
     onError: (error: Error) => {

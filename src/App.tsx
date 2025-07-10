@@ -20,6 +20,7 @@ import CreateBlogPage from "./pages/CreateBlogPage";
 import BlogDetailPage from "./pages/BlogDetailPage";
 import CSRPage from "./pages/Csr";
 import InternshipPage from "./pages/Internship";
+import UserManagementPage from "./pages/UserManagementPage";
 
 export default function App() {
   const { isAdmin, user } = useAuth();
@@ -43,11 +44,11 @@ export default function App() {
         <Route path="/internship" element={<InternshipPage />} />
 
         {/* Admin auth routes */}
-        <Route path="/auth/admin/login" element={<AdminLoginPage />} />
-        <Route path="/auth/admin/register" element={<AdminRegisterPage />} />
+        <Route path="/login" element={<AdminLoginPage />} />
+        <Route path="/register" element={<AdminRegisterPage />} />
 
         <Route
-          path="/admin/dashboard"
+          path="/dashboard"
           element={
             <AdminLayout>
               <AdminDashboard />
@@ -59,6 +60,15 @@ export default function App() {
           element={
             <AdminLayout>
               <CreateBlogPage />
+            </AdminLayout>
+          }
+        />
+
+        <Route
+          path="/dashboard/users"
+          element={
+            <AdminLayout>
+              <UserManagementPage />
             </AdminLayout>
           }
         />
