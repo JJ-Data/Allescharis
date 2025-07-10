@@ -16,7 +16,7 @@ export interface UsersResponse {
 
 export const getAllUsers = async (): Promise<UsersResponse> => {
   try {
-    const response = await axiosInstance.get("/api/users");
+    const response = await axiosInstance.get("users");
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
