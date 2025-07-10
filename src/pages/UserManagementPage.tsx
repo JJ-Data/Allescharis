@@ -13,7 +13,7 @@ export default function UserManagementPage() {
 
   const [editUserId, setEditUserId] = useState<string | null>(null);
   const [deleteUserId, setDeleteUserId] = useState<string | null>(null);
-  const [formState, setFormState] = useState({ firstName: "", lastName: "", role: "USER" });
+  const [formState, setFormState] = useState({ firstName: "", lastName: "" });
 
   const deleteMutation = useMutation({
     mutationFn: deleteUser,
@@ -24,7 +24,7 @@ export default function UserManagementPage() {
   });
 
   const updateMutation = useMutation({
-    mutationFn: ({ id, data }: { id: string; data: { firstName: string; lastName: string; role: string } }) =>
+    mutationFn: ({ id, data }: { id: string; data: { firstName: string; lastName: string } }) =>
       updateUser(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["users"] });
@@ -51,9 +51,6 @@ export default function UserManagementPage() {
                 Email
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Role
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Actions
               </th>
             </tr>
@@ -65,13 +62,12 @@ export default function UserManagementPage() {
                   {user.firstName} {user.lastName}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">{user.email}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{user.role}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
                   <button
                     className="text-green-600 hover:text-green-900"
                     onClick={() => {
                       setEditUserId(user.id);
-                      setFormState({ firstName: user.firstName, lastName: user.lastName, role: user.role });
+                      setFormState({ firstName: user.firstName, lastName: user.lastName });
                     }}
                   >
                     Edit
@@ -89,6 +85,7 @@ export default function UserManagementPage() {
         </table>
       </div>
 
+      {/* Delete Modal */}
       <Modal isOpen={!!deleteUserId} onClose={() => setDeleteUserId(null)}>
         <h2 className="text-lg font-semibold mb-4">Confirm Delete</h2>
         <p className="mb-4">Are you sure you want to delete this user?</p>
@@ -108,6 +105,7 @@ export default function UserManagementPage() {
         </div>
       </Modal>
 
+      {/* Edit Modal */}
       <Modal isOpen={!!editUserId} onClose={() => setEditUserId(null)}>
         <h2 className="text-lg font-semibold mb-4">Edit User</h2>
         <form
@@ -135,31 +133,8 @@ export default function UserManagementPage() {
               onChange={(e) => setFormState({ ...formState, lastName: e.target.value })}
             />
           </div>
-          <div>
-            <label className="block text-sm font-medium">Role</label>
-            <select
-              className="w-full border rounded p-2"
-              value={formState.role}
-              onChange={(e) => setFormState({ ...formState, role: e.target.value })}
-            >
-              <option value="USER">USER</option>
-              <option value="ADMIN">ADMIN</option>
-            </select>
-          </div>
           <div className="text-right space-x-2">
             <button
               type="button"
               onClick={() => setEditUserId(null)}
-              className="px-4 py-2 rounded bg-gray-200"
-            >
-              Cancel
-            </button>
-            <button type="submit" className="px-4 py-2 rounded bg-green-600 text-white">
-              Save
-            </button>
-          </div>
-        </form>
-      </Modal>
-    </div>
-  );
-}
+              className="px-4 p

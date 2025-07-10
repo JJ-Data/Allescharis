@@ -9,7 +9,7 @@ export interface UsersResponse {
       firstName: string;
       lastName: string;
       email: string;
-      role: string;
+      // ❌ role removed
     }[];
   };
 }
@@ -39,7 +39,7 @@ export const deleteUser = async (userId: string): Promise<void> => {
 
 export const updateUser = async (
   userId: string,
-  data: Partial<{ firstName: string; lastName: string; role: string }>
+  data: Partial<{ firstName: string; lastName: string }>
 ): Promise<void> => {
   try {
     await axiosInstance.put(`/api/users/${userId}`, data);
