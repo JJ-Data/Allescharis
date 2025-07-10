@@ -24,8 +24,13 @@ export default function UserManagementPage() {
   });
 
   const updateMutation = useMutation({
-    mutationFn: ({ id, data }: { id: string; data: { firstName: string; lastName: string } }) =>
-      updateUser(id, data),
+    mutationFn: ({
+      id,
+      data,
+    }: {
+      id: string;
+      data: { firstName: string; lastName: string };
+    }) => updateUser(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["users"] });
       setEditUserId(null);
@@ -67,7 +72,10 @@ export default function UserManagementPage() {
                     className="text-green-600 hover:text-green-900"
                     onClick={() => {
                       setEditUserId(user.id);
-                      setFormState({ firstName: user.firstName, lastName: user.lastName });
+                      setFormState({
+                        firstName: user.firstName,
+                        lastName: user.lastName,
+                      });
                     }}
                   >
                     Edit
@@ -122,7 +130,9 @@ export default function UserManagementPage() {
             <input
               className="w-full border rounded p-2"
               value={formState.firstName}
-              onChange={(e) => setFormState({ ...formState, firstName: e.target.value })}
+              onChange={(e) =>
+                setFormState({ ...formState, firstName: e.target.value })
+              }
             />
           </div>
           <div>
@@ -130,11 +140,28 @@ export default function UserManagementPage() {
             <input
               className="w-full border rounded p-2"
               value={formState.lastName}
-              onChange={(e) => setFormState({ ...formState, lastName: e.target.value })}
+              onChange={(e) =>
+                setFormState({ ...formState, lastName: e.target.value })
+              }
             />
           </div>
           <div className="text-right space-x-2">
             <button
               type="button"
               onClick={() => setEditUserId(null)}
-              className="px-4 p
+              className="px-4 py-2 rounded bg-gray-200"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="px-4 py-2 rounded bg-green-600 text-white"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </Modal>
+    </div>
+  );
+}
