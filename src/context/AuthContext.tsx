@@ -5,7 +5,6 @@ import {
   useEffect,
   ReactNode,
 } from "react";
-import { checkSession } from "@/services/auth";
 import { IUser } from "@/lib/types";
 import { checkAdminSession } from "@/services/admin";
 
@@ -29,22 +28,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const validateSession = async () => {
     setIsLoading(true);
     try {
-      const token = localStorage.getItem("token");
-      if (!token) {
-        setIsLoading(false);
-        return;
-      }
-
-      const data = await checkSession();
-      console.log("Session validation response:", data);
-
+      const data = await checkAdminSession();
       if (data.success && data.user) {
-        setUser(data.user);
-        if (data.user.role === "ADMIN") {
-          const adminData = await checkAdminSession();
-          console.log("Admin session validation:", adminData);
-          setIsAdmin(adminData.success && adminData.user?.role === "ADMIN");
-        }
+        const nameParts = data.user.name.split(" ");
+        setUser({
+          id: data.user.id,
+          firstName: nameParts[0] || "",
+          lastName: nameParts.slice(1).join(" "),
+          email: data.user.email,
+          role: data.user.role as IUser["role"],
+        });
+        setIsAdmin(data.user.role === "super-admin");
+      } else {
+        setUser(null);
+        setIsAdmin(false);
       }
     } catch (error) {
       console.error("Session validation error:", error);
@@ -58,43 +55,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const checkAdmin = async () => {
-    try {
-      const data = await checkAdminSession();
-      console.log(data);
-      const adminStatus = data.success && data?.user?.role === "ADMIN";
-      setIsAdmin(adminStatus);
-      return adminStatus;
-    } catch (error) {
-      console.error("Admin check failed:", error);
-      return false;
-    }
+    const status = user?.role === "super-admin";
+    setIsAdmin(status);
+    return status;
   };
 
   const login = async (userData: IUser, token: string) => {
-    console.log("user in login: ", user);
     localStorage.setItem("token", token);
     const completeUserData = {
       ...userData,
       createdAt: userData.createdAt || new Date(),
       updatedAt: userData.updatedAt || new Date(),
     };
-
-    // Immediately update state
     setUser(completeUserData);
-
-    // Verify admin status if needed
-    if (completeUserData.role === "ADMIN") {
-      try {
-        const adminData = await checkAdminSession();
-        setIsAdmin(adminData.success && adminData.user?.role === "ADMIN");
-      } catch (error) {
-        console.error("Admin verification failed:", error);
-        setIsAdmin(false);
-      }
-    }
-
-    // Force a session validation to ensure consistency
-    await validateSession();
+    setIsAdmin(completeUserData.role === "super-admin");
   };
 
   const logout = () => {
