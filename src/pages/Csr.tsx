@@ -43,13 +43,13 @@ export default function CSRPage() {
               title: "SKY FOUNDATION PARTNERSHIP",
               description:
                 "With a ₦300,000 donation and volunteer support, ACGL backed SKY’s summer programme to nurture creativity and growth in children.",
-              image: "/assets/sky.jpg",
+              image: "/assets/SkyFCSR.jpeg",
             },
             {
               number: "4",
-              title: "COMMUNITY LIAISON OFFICERS (CLOs)",
+              title: "Community Obligations:",
               description:
-                "We pay CLO salaries in Nkpolu and Elelenwon to strengthen ties with host communities and foster mutual engagement.",
+                "As part of our Corporate Social Responsibility (CSR) commitments to our host communities, we provide financial support for liaison officers, award educational scholarships to qualified indigenes, and fund vocational training programs aimed at empowering community members with practical skills for sustainable livelihoods",
               image: "/assets/clo.PNG",
             },
             {
@@ -61,10 +61,17 @@ export default function CSRPage() {
             },
             {
               number: "6",
-              title: "PROMOTING ENVIRONMENTAL SUSTAINABILITY",
+              title: "Nkpolu Medical Outreach",
               description:
-                "We adopt eco-friendly practices—from low-emission logistics to sustainable operations—ensuring a greener tomorrow.",
-              image: "/assets/enviroment.jpg",
+                "As part of its Corporate Social Responsibility (CSR) commitment, Alles Charis Limited organized a free medical outreach in Nkpolu, Port Harcourt, to improve access to healthcare among underserved populations. The initiative provided essential services such as malaria treatment, health screenings, HIV testing, and health education to 182 beneficiaries. It aimed not only to meet immediate medical needs but also to promote long-term community wellness through preventive care and lifestyle counselling.",
+              image: "/assets/NkpoluCSR.png",
+            },
+            {
+              number: "7",
+              title: "GridironGEMS Project",
+              description:
+                "We proudly supported the GridironGEMS initiative with a contribution of ₦10 million and volunteering, reinforcing our commitment to inclusion and community empowerment. In partnership with the Nigerian American Football Association (NAFA), this impactful programme aims to utilize American football to empower women and girls across Nigeria thus fostering leadership, mentorship, and grassroots development. It will also support the preparation of Nigeria’s Female Flag Football Team ahead of the LA28 Olympics.",
+              image: "/assets/GiridonGems.png",
             },
           ].map((item, index) => (
             <div

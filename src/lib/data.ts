@@ -22,13 +22,13 @@ export const testimonialData = [
 export const manager = [
   {
     name: "Folajomi Adegbulugbe",
-    position: "Executive director",
+    position: "Executive Director",
     img: "/assets/px8.jpeg",
     linkedin: "https://www.linkedin.com/in/folajomi/",
   },
   {
     name: "Samuel Ogbole",
-    position: "Executive director",
+    position: "Executive Director",
     img: "/assets/Avatar_2.png",
     linkedin: "https://www.linkedin.com/in/samuel-ogbole/",
   },
@@ -53,7 +53,7 @@ export const manager = [
   },
   {
     name: "Ayotomiwa Oluwafemi Samuel",
-    position: "General manager, logistics Operations",
+    position: "General Manager, Logistics Operations",
     img: "/assets/px12.jpg",
     linkedin: "https://www.linkedin.com/in/samuel-ayotomiwa-oluwafemi/",
   },

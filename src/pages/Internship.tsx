@@ -14,11 +14,10 @@ export default function InternshipPage() {
         />
         <div className="absolute bg-[#00005B]/70 w-full h-full flex flex-col justify-center items-center text-white text-center px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Internship at Alles Charis
+            Our NYSC Internship Programme
           </h1>
           <p className="text-lg md:text-xl max-w-3xl">
-            Equipping young talents with skills, discipline, and purpose in the
-            LPG sector.
+            Building the Next Generation of Industry Leaders
           </p>
         </div>
       </header>
@@ -59,7 +58,7 @@ export default function InternshipPage() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {[
             "Accounting",
-            "Marketing",
+            "Sales",
             "IT",
             "Logistics",
             "Administration",
@@ -95,6 +94,31 @@ export default function InternshipPage() {
               name: "Esther O.",
               dept: "Business Development",
               text: "I was part of the Business Development team and it opened my eyes to market strategy and client engagement. It was a fulfilling experience.",
+            },
+            {
+              name: "Toheeb A.",
+              dept: "Maintenance",
+              text: "At Alles Charis, I gained practical experience in marketing and sales, with a focus on customer engagement, deal closure, and sales analysis. I developed skills in data interpretation, performance tracking, and strategic decision-making, all of which enhanced my ability to contribute effectively to business growth and sales operations.",
+            },
+            {
+              name: "David E.",
+              dept: "IT",
+              text: "My internship at Alles Charis was transformative! It gave me clarity on my career path, purpose, and goals. From workshops to practical tasks, every day was engaging and enjoyable. I remain grateful for the opportunity. ",
+            },
+            {
+              name: "Udo Uduak",
+              dept: "Operations",
+              text: "My role as an Operations Intern at Alles Charis Gas Limited sharpened my skills in process optimization and gas operations, boosting operational efficiency and harnessing my data-driven decision-making skills. The company’s mentorship and CSR initiatives fostered my leadership, adaptability, and commitment to ethical responsibility, shaping me into a confident professional",
+            },
+            {
+              name: "Olaoluwakintan  O.",
+              dept: "HSE",
+              text: "My role as an Operations Intern at Alles Charis Gas Limited sharpened my skills in process optimization and gas operations, boosting operational efficiency and harnessing my data-driven decision-making skills. The company’s mentorship and CSR initiatives fostered my leadership, adaptability, and commitment to ethical responsibility, shaping me into a confident professional",
+            },
+            {
+              name: "Gloria  O.",
+              dept: "Finance",
+              text: "As an Account Intern at Alles-Charis Gas Limited, I had the opportunity to work with real-time financial data, which sharpened my attention to detail and deepened my understanding of core accounting processes such as reconciling records, managing cash flow, and preparing audit documentation. Beyond technical skills, the experience reinforced my passion for accounting, strengthened my confidence, and equipped me to take on greater responsibilities in a professional setting.",
             },
           ].map((testimonial, index) => (
             <motion.div

@@ -50,12 +50,12 @@ const Wedo = () => {
         <WedoCard
           title="Distribution"
           subtitle="Our logistics network includes industry-certified bridgers and a dedicated fleet of Bobtails for both long- and short-distance LPG transportation. From production sites to inland destinations, we prioritize safety, punctuality, and product integrity. Our adaptable distribution model enables us to effectively serve residential, commercial, and industrial customers throughout Nigeria."
-          src="/assets/Distribution.JPG"
+          src="/assets/Distribution.jpeg"
         />
         <WedoCard
           title="Bulk Sales"
           subtitle="We offer bulk LPG supply solutions to large-scale consumers such as industries, commercial facilities, and institutional clients. Our bulk sales service is designed to ensure reliable delivery, competitive pricing, and tailored supply agreements that meet the operational demands of high-volume users."
-          src="/assets/Bulk.jpg"
+          src="/assets/Bulk Sales.jpeg"
         />
         <WedoCard
           title="Retail"
