@@ -10,7 +10,6 @@ const navItems = [
   { name: "Services", path: "/services" },
   { name: "Stations", path: "/stations" },
   { name: "Our Team", path: "/team" },
-  { name: "Media", path: "/media" },
 ];
 
 const opportunitiesDropdown = [
@@ -19,17 +18,22 @@ const opportunitiesDropdown = [
   { name: "Internship", path: "/internship" },
 ];
 
+const mediaDropdown = [
+  { name: "Blogs", path: "/blogs" },
+  { name: "Gallery", path: "/media" },
+];
+
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [opportunitiesOpen, setOpportunitiesOpen] = useState(false);
+  const [mediaOpen, setMediaOpen] = useState(false);
   let dropdownTimeout: NodeJS.Timeout;
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -83,21 +87,57 @@ export default function Nav() {
             </motion.div>
           ))}
 
+          {/* Media Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => {
+              clearTimeout(dropdownTimeout);
+              setMediaOpen(true);
+            }}
+            onMouseLeave={() => {
+              dropdownTimeout = setTimeout(() => setMediaOpen(false), 200);
+            }}
+          >
+            <button className="text-base text-gray-700 hover:text-blue-900 font-semibold py-1.5 px-4 rounded-sm transition-all duration-500">
+              Media
+            </button>
+            {mediaOpen && (
+              <div className="absolute top-full left-0 bg-white shadow-lg mt-2 rounded-md w-48 z-50">
+                {mediaDropdown.map((item) => (
+                  <NavLink
+                    key={item.name}
+                    to={item.path}
+                    onClick={() => {
+                      setIsOpen(false);
+                      setMediaOpen(false);
+                    }}
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-900 transition duration-300"
+                  >
+                    {item.name}
+                  </NavLink>
+                ))}
+              </div>
+            )}
+          </div>
+
           {/* Opportunities Dropdown */}
           <div
             className="relative"
             onMouseEnter={() => {
               clearTimeout(dropdownTimeout);
-              setDropdownOpen(true);
+              setOpportunitiesOpen(true);
             }}
             onMouseLeave={() => {
-              dropdownTimeout = setTimeout(() => setDropdownOpen(false), 200);
+              dropdownTimeout = setTimeout(
+                () => setOpportunitiesOpen(false),
+                200
+              );
             }}
           >
             <button className="text-base text-gray-700 hover:text-blue-900 font-semibold py-1.5 px-4 rounded-sm transition-all duration-500">
               Opportunities
             </button>
-            {dropdownOpen && (
+            {opportunitiesOpen && (
               <div className="absolute top-full left-0 bg-white shadow-lg mt-2 rounded-md w-48 z-50">
                 {opportunitiesDropdown.map((item) => (
                   <NavLink
@@ -105,7 +145,7 @@ export default function Nav() {
                     to={item.path}
                     onClick={() => {
                       setIsOpen(false);
-                      setDropdownOpen(false);
+                      setOpportunitiesOpen(false);
                     }}
                     className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-900 transition duration-300"
                   >
