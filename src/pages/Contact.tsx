@@ -85,17 +85,14 @@ function Contact() {
                   Email:{" "}
                   <a
                     href="mailto:info@allescharis.ng"
-                    className="underline hover:text-blue-200"
+                    className="hover:text-blue-200"
                   >
                     info@allescharis.ng
                   </a>
                 </p>
                 <p className="text-lg">
                   Phone:{" "}
-                  <a
-                    href="tel:+2349160757838"
-                    className="underline hover:text-blue-200"
-                  >
+                  <a href="tel:+2349160757838" className="hover:text-blue-200">
                     +234 916 075 7838
                   </a>
                 </p>
