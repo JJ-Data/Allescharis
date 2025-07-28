@@ -19,7 +19,7 @@ const opportunitiesDropdown = [
 ];
 
 const mediaDropdown = [
-  { name: "Blogs", path: "/blogs" },
+  { name: "Blogs", path: "/blog" },
   { name: "Gallery", path: "/media" },
 ];
 
