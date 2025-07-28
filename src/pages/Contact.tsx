@@ -1,13 +1,14 @@
 import ContactForm from "@/components/ContactForm";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { MdEmail, MdPhone } from "react-icons/md";
 
 function Contact() {
   return (
     <div className="flex flex-col items-center">
       <header className="shadow-lg relative w-full md:min-h-[75vh] min-h-screen h-full">
         <img
-          src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600"
+          src="/assets/stationbg.JPG"
           alt="hero_img"
           className="bg-cover bg-no-repeat w-full h-full object-cover absolute mix-blend-normal"
         />
@@ -75,27 +76,29 @@ function Contact() {
                 </a>
               </div>
 
-              {/* Contact Info */}
-              <div className="mt-6 text-left text-white space-y-3 max-w-md">
+              {/* Contact Info with Icons */}
+              <div className="mt-6 text-left text-white space-y-4 max-w-md">
                 <p className="text-base md:text-lg">
-                  To contact us, please reach out through the following
-                  channels:
+                  You can also reach out through the following channels:
                 </p>
-                <p className="text-lg">
-                  Email:{" "}
+                <div className="flex items-center space-x-3">
+                  <MdEmail size={22} className="text-white" />
                   <a
                     href="mailto:info@allescharis.ng"
-                    className="hover:text-blue-200"
+                    className=" hover:text-blue-200 text-lg"
                   >
                     info@allescharis.ng
                   </a>
-                </p>
-                <p className="text-lg">
-                  Phone:{" "}
-                  <a href="tel:+2349160757838" className="hover:text-blue-200">
+                </div>
+                <div className="flex items-center space-x-3">
+                  <MdPhone size={22} className="text-white" />
+                  <a
+                    href="tel:+2349160757838"
+                    className=" hover:text-blue-200 text-lg"
+                  >
                     +234 916 075 7838
                   </a>
-                </p>
+                </div>
               </div>
             </div>
 
