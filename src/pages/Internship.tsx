@@ -22,6 +22,32 @@ export default function InternshipPage() {
         </div>
       </header>
 
+      {/* About the Programme Section */}
+      <section className="py-20 px-6 md:px-16 bg-white text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-blue-900">
+          About the NYSC Internship Programme
+        </h2>
+        <p className="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed">
+          The NYSC Internship Programme was established to identify and nurture
+          high-potential young talents, equipping them with the practical
+          skills, industry insight, and hands-on experience needed for a
+          successful professional journey. Since its launch in 2022, the
+          programme has trained over 20 graduates across key departments within
+          the company, providing a strong foundation for long-term career
+          growth. Many of our former interns have gone on to excel in diverse
+          roles both locally and internationally.
+          <br />
+          <br />
+          The selection process is merit-based and transparent, offering
+          successful candidates the opportunity to leverage their one-year
+          mandatory service as a platform for learning, contribution, and
+          personal development within the organization. At its core, the
+          programme reflects our commitment to capacity building, youth
+          empowerment, and shaping the future of the energy sector —{" "}
+          <strong>ONE INTERN AT A TIME.</strong>
+        </p>
+      </section>
+
       {/* Process Section */}
       <section className="py-20 px-6 md:px-16 bg-gray-50 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-10 text-blue-900">
@@ -145,9 +171,13 @@ export default function InternshipPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
           {[
             "/assets/interns1.jpg",
-            "/assets/interns2.jpg",
+            "/assets/interns2.jpeg",
             "/assets/interns3.jpg",
             "/assets/interns4.jpg",
+            "/assets/interns5.jpeg",
+            "/assets/interns6.jpeg",
+            "/assets/interns7.jpeg",
+            "/assets/interns8.jpeg",
           ].map((src, idx) => (
             <img
               key={idx}
