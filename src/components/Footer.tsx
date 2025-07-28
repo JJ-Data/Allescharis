@@ -62,7 +62,7 @@ export default function Footer() {
           </Link>
           <div className="flex space-x-4">
             <motion.a
-              href="#"
+              href="https://facebook.com/allescharis"
               variants={socialIconVariants}
               whileHover="hover"
               className="blue-glow rounded-full p-1.5 bg-blue-800"
@@ -70,7 +70,7 @@ export default function Footer() {
               <FaFacebook className="text-white" size={22} />
             </motion.a>
             <motion.a
-              href="#"
+              href="https://www.linkedin.com/company/alles-charis/posts/?feedView=all"
               variants={socialIconVariants}
               whileHover="hover"
               className="blue-glow rounded-full p-1.5 bg-blue-800"
@@ -78,7 +78,7 @@ export default function Footer() {
               <FaLinkedin className="text-white" size={22} />
             </motion.a>
             <motion.a
-              href="#"
+              href="https://www.youtube.com/watch?v=GkljyYADgzM"
               variants={socialIconVariants}
               whileHover="hover"
               className="blue-glow rounded-full p-1.5 bg-blue-800"
@@ -86,7 +86,7 @@ export default function Footer() {
               <FaYoutube className="text-white" size={22} />
             </motion.a>
             <motion.a
-              href="#"
+              href="https://www.instagram.com/allescharis_/?hl=en"
               variants={socialIconVariants}
               whileHover="hover"
               className="blue-glow rounded-full p-1.5 bg-blue-800"
@@ -111,7 +111,7 @@ export default function Footer() {
               variants={linkVariants}
               whileHover="hover"
             >
-              Who We Are
+              What We Do
             </motion.a>
             <motion.div whileHover="hover" variants={linkVariants}>
               <Link
@@ -127,12 +127,12 @@ export default function Footer() {
               variants={linkVariants}
               whileHover="hover"
             >
-              Our Value
+              Our Values
             </motion.a>
           </motion.div>
           <motion.div className="flex flex-col gap-5" variants={itemVariants}>
             <motion.a
-              href="/#about"
+              href="/services"
               className="hover:text-blue-300 transition-colors"
               variants={linkVariants}
               whileHover="hover"
@@ -140,33 +140,33 @@ export default function Footer() {
               Services
             </motion.a>
             <motion.a
-              href="/services"
+              href="/blog"
               className="hover:text-blue-300 transition-colors"
               variants={linkVariants}
               whileHover="hover"
             >
-              LPG Logistics
+              Blogs
             </motion.a>
             <motion.div whileHover="hover" variants={linkVariants}>
               <Link
-                to="/team"
+                to="/media"
                 className="hover:text-blue-300 transition-colors"
               >
-                Bulk Installations
+                Gallery
               </Link>
             </motion.div>
             <motion.a
-              href="/services"
+              href="/csr"
               className="hover:text-blue-300 transition-colors"
               variants={linkVariants}
               whileHover="hover"
             >
-              Retail Services
+              CSR
             </motion.a>
           </motion.div>
           <motion.div className="flex flex-col gap-5" variants={itemVariants}>
             <motion.a
-              href="/about"
+              href="/contact"
               className="hover:text-blue-300 transition-colors"
               variants={linkVariants}
               whileHover="hover"
@@ -174,19 +174,19 @@ export default function Footer() {
               Contact
             </motion.a>
             <motion.a
-              href="/contact"
+              href="/internship"
               className="hover:text-blue-300 transition-colors"
               variants={linkVariants}
               whileHover="hover"
             >
-              Contact Information
+              Internship
             </motion.a>
             <motion.div whileHover="hover" variants={linkVariants}>
               <Link
-                to="/team"
+                to="/careers"
                 className="hover:text-blue-300 transition-colors"
               >
-                Careers/Opportunities
+                Careers
               </Link>
             </motion.div>
             <motion.a

@@ -13,7 +13,7 @@ function Contact() {
         />
         <div className="w-full flex flex-col justify-center items-center absolute bg-[#00005B]/70 text-white h-full text-center">
           <div className="mx-auto container py-16 px-4 sm:px-8 md:px-16 lg:px-28 border-white h-full flex flex-col md:flex-row gap-8">
-            <div className="flex-1 flex flex-col gap-5 justify-around">
+            <div className="flex-1 flex flex-col gap-6 justify-around">
               <div>
                 <p className="text-xl text-white text-left uppercase">
                   connect with us
@@ -30,13 +30,79 @@ function Contact() {
                   </span>
                 </h1>
               </div>
-              <div className="flex space-x-4">
-                <FaFacebook className="text-white" size={24} />
-                <FaLinkedin className="text-white" size={24} />
-                <FaYoutube className="text-white" size={24} />
-                <AiFillInstagram className="text-white" size={24} />
+
+              {/* Social Icons with Links */}
+              <div className="flex space-x-4 mt-4">
+                <a
+                  href="https://facebook.com/allescharis"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebook
+                    className="text-white hover:text-blue-300"
+                    size={24}
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/alles-charis/posts/?feedView=all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedin
+                    className="text-white hover:text-blue-300"
+                    size={24}
+                  />
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=GkljyYADgzM"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaYoutube
+                    className="text-white hover:text-blue-300"
+                    size={24}
+                  />
+                </a>
+                <a
+                  href="https://www.instagram.com/allescharis_/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AiFillInstagram
+                    className="text-white hover:text-blue-300"
+                    size={24}
+                  />
+                </a>
+              </div>
+
+              {/* Contact Info */}
+              <div className="mt-6 text-left text-white space-y-3 max-w-md">
+                <p className="text-base md:text-lg">
+                  To contact us, please reach out through the following
+                  channels:
+                </p>
+                <p className="text-lg">
+                  Email:{" "}
+                  <a
+                    href="mailto:info@allescharis.ng"
+                    className="underline hover:text-blue-200"
+                  >
+                    info@allescharis.ng
+                  </a>
+                </p>
+                <p className="text-lg">
+                  Phone:{" "}
+                  <a
+                    href="tel:+2349160757838"
+                    className="underline hover:text-blue-200"
+                  >
+                    +234 916 075 7838
+                  </a>
+                </p>
               </div>
             </div>
+
+            {/* Contact Form */}
             <div className="flex-1">
               <ContactForm />
             </div>
