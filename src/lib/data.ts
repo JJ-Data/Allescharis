@@ -59,7 +59,7 @@ export const manager = [
   },
   {
     name: "Adebanke Bamidele",
-    position: "Marketing Manager",
+    position: "Sales Manager",
     img: "/assets/px4.jpg",
     linkedin: "https://www.linkedin.com/in/adebanke-bamidele/",
   },
