@@ -15,7 +15,7 @@ function Home() {
             <Helmet>
                 <title>Alles Charis Gas Limited</title>
                 <meta name="description" content="Alles Charis Gas Ltd delivers clean, safe, and affordable cooking gas across Nigeria. Order fast with safety guaranteed." />
-                <meta name="keywords" content="top gas company in Nigeria, cooking gas delivery, LPG Nigeria, gas refill, gas cylinder, gas safety, Alles Charis, affordable gas" />
+                <meta name="keywords" content="top 10 gas company in Nigeria, cooking gas delivery, LPG Nigeria, gas refill, gas cylinder, gas safety, Alles Charis, affordable gas" />
                 <meta name="author" content="Alles Charis Gas Ltd" />
                 <meta name="robots" content="index, follow" />
             </Helmet>
