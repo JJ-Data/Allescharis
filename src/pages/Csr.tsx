@@ -1,9 +1,13 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+
 export default function CSRPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
       <header className="relative w-full h-[65dvh] shadow-lg">
-        <img
+        <LazyLoadImage
+          effect="blur"
           src="/assets/Csrbg.jpg"
           alt="CSR background"
           className="absolute w-full h-full object-cover"
@@ -78,7 +82,8 @@ export default function CSRPage() {
               key={index}
               className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group"
             >
-              <img
+              <LazyLoadImage
+                effect="blur"
                 src={item.image}
                 alt={item.title}
                 className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"

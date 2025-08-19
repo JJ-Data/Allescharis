@@ -2,12 +2,15 @@ import ContactForm from "@/components/ContactForm";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { MdEmail, MdPhone } from "react-icons/md";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 
 function Contact() {
   return (
     <div className="flex flex-col items-center">
       <header className="shadow-lg relative w-full md:min-h-[75vh] min-h-screen h-full">
-        <img
+        <LazyLoadImage
+          effect="blur"
           src="/assets/stationbg.JPG"
           alt="hero_img"
           className="bg-cover bg-no-repeat w-full h-full object-cover absolute mix-blend-normal"
@@ -22,7 +25,8 @@ function Contact() {
                 <h1 className="text-md md:text-lg lg:text-5xl font-bold tracking-wider uppercase text-white w-10/12 text-left">
                   A Click away from the LPG Service you
                   <span className="relative inline-block px-8">
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
                       src="/assets/highlighter 1.png"
                       alt="highlights"
                       className="absolute -top-2 left-0 rotate-180"

@@ -6,6 +6,7 @@ import { updateBlog } from "@/services/blogs";
 import Loader from "@/components/Loader";
 import { useDropzone } from "react-dropzone";
 import { toast } from "react-toastify";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function EditBlogPage() {
   const { id } = useParams<{ id: string }>();
@@ -133,7 +134,7 @@ export default function EditBlogPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {images.map((url) => (
                 <div key={url} className="relative group">
-                  <img src={url} className="w-full h-32 object-cover rounded-lg" />
+                  <LazyLoadImage effect="blur" src={url} className="w-full h-32 object-cover rounded-lg" />
                   <button
                     type="button"
                     onClick={() => removeImage(url)}

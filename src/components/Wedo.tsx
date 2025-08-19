@@ -1,3 +1,6 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+
 type TProps = {
   title: string;
   subtitle: string;
@@ -8,7 +11,8 @@ const WedoCard = ({ title, subtitle, src }: TProps) => {
   return (
     <div className="flex flex-col md:flex-row gap-6 mt-10 group transition-all duration-500">
       <div className="flex-1 overflow-hidden rounded-2xl shadow-md border-2 border-transparent group-hover:border-blue-200">
-        <img
+        <LazyLoadImage
+          effect="blur"
           src={src}
           alt={title}
           className="w-full h-64 md:h-full object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-500"

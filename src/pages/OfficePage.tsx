@@ -1,12 +1,14 @@
 import StationsSelectMap from "@/components/StationsMap";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function OfficePage() {
   return (
     <div className="flex flex-col">
       <header className="shadow-lg relative w-full h-[65dvh]">
-        <img
+        <LazyLoadImage
           src="/assets/stationbg.JPG"
           alt="hero_img"
+          effect="blur"
           className="bg-cover bg-no-repeat w-full h-full object-cover absolute mix-blend-normal"
         />
         <div className="w-full flex flex-col justify-center items-center absolute bg-[#00005B]/70 text-white h-full text-center">

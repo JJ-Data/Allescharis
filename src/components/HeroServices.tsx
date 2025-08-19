@@ -1,3 +1,6 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+
 const HeroServices = () => {
     return (
         <div className="max-w-screen-lg mx-auto p-4">
@@ -41,7 +44,8 @@ const HeroServices = () => {
                 ].map((service, index) => (
                     <div key={index}
                          className="p-6 rounded-lg bg-[#f1f5f9] hover:bg-[#000066] transition-colors duration-300 group">
-                        <img
+                        <LazyLoadImage
+                            effect="blur"
                             className="w-[50px] h-[50px] rounded-full border-2 border-blue-600 group-hover:border-white transition-colors duration-300 mb-6 group-hover:scale-125"
                             src={service.image} alt={service.title}/>
                         <h3 className="text-xl font-semibold mb-1 text-[#4f5053] group-hover:text-white capitalize transition-colors duration-300">{service.title}</h3>

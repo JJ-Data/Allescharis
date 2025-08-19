@@ -22,6 +22,7 @@ import EditBlogPage from "./pages/EditBlogPage";
 import CSRPage from "./pages/Csr";
 import InternshipPage from "./pages/Internship";
 import UserManagementPage from "./pages/UserManagementPage";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 export default function App() {
   const { isAdmin, user } = useAuth();

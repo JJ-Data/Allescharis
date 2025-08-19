@@ -1,6 +1,8 @@
 import {useState, useEffect} from "react";
 import {ChevronLeft, ChevronRight} from "lucide-react";
 import {FaLinkedin} from "react-icons/fa";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 
 type ManagerType = {
     name: string;
@@ -15,7 +17,7 @@ const Manager = ({item}: { item: ManagerType }) => {
         <div
             className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl">
             <div className="w-40 h-40 mb-6 overflow-hidden rounded-full border-4 border-blue-500">
-                <img src={img} alt={name} className="w-full h-full object-cover"/>
+                <LazyLoadImage effect="blur" src={img} alt={name} className="w-full h-full object-cover"/>
             </div>
             <h3 className="text-2xl font-bold text-gray-800 mb-2">{name}</h3>
             <p className="text-lg text-blue-600 font-semibold mb-4">{position}</p>

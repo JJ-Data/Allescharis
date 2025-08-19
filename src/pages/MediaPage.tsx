@@ -1,4 +1,6 @@
 import { photos } from "@/lib/data";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 
 export default function MediaPage() {
   return (
@@ -14,7 +16,8 @@ export default function MediaPage() {
               key={index}
               className="relative overflow-hidden rounded-lg aspect-square group"
             >
-              <img
+              <LazyLoadImage
+                effect="blur"
                 src={photo.img}
                 alt={photo.text}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"

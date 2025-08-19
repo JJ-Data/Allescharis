@@ -4,6 +4,9 @@ import { getBlogById } from "@/services/blogs";
 import Loader from "@/components/Loader";
 import ImageSlider from "@/components/ImageSlider";
 import { motion } from "framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+
 
 interface Blog {
   id: string;
@@ -81,7 +84,8 @@ function BlogDetailPage() {
         </div>
 
         <div className="flex items-center space-x-3">
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={blog?.authorId.imageSrc}
             alt={blog?.authorId.name}
             className="w-10 h-10 rounded-full object-cover"

@@ -2,6 +2,7 @@
 import { manager } from "@/lib/data";
 // import { ChevronLeft, ChevronRight } from "lucide-react";
 import ManagerCarousel from "@/components/ManagerCarousel";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // type TProps = {
 //   item: { name: string; position: string; img: string };

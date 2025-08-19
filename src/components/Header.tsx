@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 enum disp {
   DISP_1,
@@ -11,9 +12,10 @@ export default function Header() {
 
   return (
     <header className="shadow-xl relative w-full h-[32rem]">
-      <img
+      <LazyLoadImage
         src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600"
         alt="hero_img"
+        effect="blur"
         className="bg-cover bg-no-repeat w-full h-full object-cover absolute mix-blend-normal"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-800/70" />
@@ -24,7 +26,8 @@ export default function Header() {
               <h1 className="text-md md:text-lg lg:text-5xl font-bold tracking-wider uppercase text-white blue-text-glow">
                 Your{" "}
                 <span className="relative px-2 md:px-5">
-                  <img
+                  <LazyLoadImage
+                    effect="blur"
                     src="/assets/highlighter 1.png"
                     alt="highlights"
                     className="absolute -top-3 md:-top-5 md:-left-1 lg:-top-10 left-0 lg:-left-2 right-0"
@@ -57,7 +60,8 @@ export default function Header() {
                 <span className="mt-3 block">
                   LPG Service you{" "}
                   <span className="relative px-4">
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
                       src="/assets/highlighter 1.png"
                       alt="highlights"
                       className="absolute -top-6 -left-2 right-0"

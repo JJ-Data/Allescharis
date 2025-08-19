@@ -4,6 +4,8 @@ import { createBlog } from "@/services/blogs";
 import { useAuth } from "@/context/AuthContext";
 import { useDropzone } from "react-dropzone";
 import { toast } from "react-toastify";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 
 function CreateBlogPage() {
   const [title, setTitle] = useState("");
@@ -172,7 +174,8 @@ function CreateBlogPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {images.map((url) => (
                 <div key={url} className="relative group">
-                  <img
+                  <LazyLoadImage
+                    effect="blur"
                     src={url}
                     alt="Uploaded preview"
                     className="w-full h-32 object-cover rounded-lg"

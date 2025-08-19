@@ -1,3 +1,6 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+
 export default function About() {
   return (
     <>
@@ -42,9 +45,10 @@ export default function About() {
             </div>
 
             <div className="flex-1 w-full max-w-lg lg:max-w-none">
-              <img
+              <LazyLoadImage
                 src="/assets/Property 1=Default.jpg"
                 alt="Alles Charis Gas Limited"
+                effect="blur"
                 className="w-full h-auto rounded-lg shadow-xl border-4 border-blue-200"
               />
             </div>

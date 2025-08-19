@@ -5,6 +5,8 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 
 interface Blog {
   id: string;
@@ -110,7 +112,8 @@ function BlogPage() {
                   to={`/blogs/${blog.id}`}
                   className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:scale-105"
                 >
-                  <img
+                  <LazyLoadImage
+                    effect="blur"
                     src={
                       blog.imageSrc[0] || "https://via.placeholder.com/300x200"
                     }
@@ -125,7 +128,8 @@ function BlogPage() {
                       {blog.content.split("\n")[0]}
                     </p>
                     <div className="mt-4 flex items-center">
-                      <img
+                      <LazyLoadImage
+                        effect="blur"
                         src={blog.authorId.imageSrc}
                         alt={blog.authorId.name}
                         className="w-8 h-8 rounded-full mr-2"

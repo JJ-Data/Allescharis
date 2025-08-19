@@ -1,3 +1,6 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+
 type TProps = {
   title: string;
   subtitle: string;
@@ -10,7 +13,8 @@ const Card = ({ title, subtitle, src }: TProps) => {
       className="flex flex-col space-y-9 group transition-all duration-500 rounded-lg overflow-hidden 
       shadow-md hover:shadow-xl blue-card blue-hover-effect"
     >
-      <img
+      <LazyLoadImage
+        effect="blur"
         src={src}
         alt="what_we_do_img"
         className="w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"

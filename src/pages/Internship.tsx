@@ -1,13 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { FaQuoteLeft } from "react-icons/fa";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 
 export default function InternshipPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
       <header className="relative w-full h-[65dvh] shadow-lg">
-        <img
+        <LazyLoadImage
+          effect="blur"
           src="/assets/internship-hero.jpg"
           alt="Internship background"
           className="absolute w-full h-full object-cover"
@@ -179,7 +182,8 @@ export default function InternshipPage() {
             "/assets/interns7.jpeg",
             "/assets/interns8.jpeg",
           ].map((src, idx) => (
-            <img
+            <LazyLoadImage
+              effect="blur"
               key={idx}
               src={src}
               alt={`Internship Moment ${idx + 1}`}
