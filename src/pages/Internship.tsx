@@ -132,8 +132,8 @@ export default function InternshipPage() {
               text: "My internship at Alles Charis was transformative! It gave me clarity on my career path, purpose, and goals. From workshops to practical tasks, every day was engaging and enjoyable. I remain grateful for the opportunity. ",
             },
             {
-              name: "Olaoluwakintan  O.",
-              dept: "HSE",
+              name: "Udo Uduak",
+              dept: "Operations",
               text: "My role as an Operations Intern at Alles Charis Gas Limited sharpened my skills in process optimization and gas operations, boosting operational efficiency and harnessing my data-driven decision-making skills. The company’s mentorship and CSR initiatives fostered my leadership, adaptability, and commitment to ethical responsibility, shaping me into a confident professional",
             },
             {
