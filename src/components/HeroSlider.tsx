@@ -36,7 +36,7 @@ export default function HeroSlider() {
         "Safety is at the core of everything we do, prioritizing the well-being of our customers and their families.",
     },
     {
-      image: "/assets/Image2.png",
+      image: "/assets/Ore3.jpg",
       header: "Fueling Moments That Matter with YOU",
       description:
         "With strategically located stations, we ensure that you are never far from the fuel you need.",

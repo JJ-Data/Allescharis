@@ -45,7 +45,7 @@ const Wedo = () => {
         <WedoCard
           title="Storage"
           subtitle="To support seamless distribution, we have established LPG storage facilities in key locations across the country. These facilities adhere to stringent safety standards while ensuring continuous product availability. By strengthening our storage infrastructure, Alles Charis ensures timely and consistent supply to meet the needs of our diverse clientele."
-          src="/assets/Storage.JPG"
+          src="/assets/Ore1.jpg"
         />
         <WedoCard
           title="Distribution"

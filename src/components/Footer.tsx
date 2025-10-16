@@ -78,7 +78,7 @@ export default function Footer() {
               <FaLinkedin className="text-white" size={22} />
             </motion.a>
             <motion.a
-              href="https://www.youtube.com/watch?v=GkljyYADgzM"
+              href="https://youtu.be/6TUoe7RjgaQ?si=FlDiIo0Bz_o7tjqw"
               variants={socialIconVariants}
               whileHover="hover"
               className="blue-glow rounded-full p-1.5 bg-blue-800"

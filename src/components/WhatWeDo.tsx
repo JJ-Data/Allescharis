@@ -53,7 +53,7 @@ export default function WhatWeDo() {
         <Card
           title="Storage"
           subtitle="We have built storage facilities across the nation to ease the distribution of LPG. Adherence to safety standards and in time delivery will ensure customer satisfaction."
-          src="/assets/Storage.JPG"
+          src="/assets/Ore1.jpg"
         />
       </div>
     </div>
