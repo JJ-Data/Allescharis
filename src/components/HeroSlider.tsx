@@ -6,7 +6,7 @@ export default function HeroSlider() {
 
   const slides = [
     {
-      image: "/assets/Image21.png",
+      image: "/assets/Lifecamp.jpg",
       header: "LPG You Can Trust",
       description:
         "Count on us for consistent, dependable LPG that powers your everyday needs",
@@ -18,7 +18,7 @@ export default function HeroSlider() {
         "Cooking is at the heart of every home, and we believe in providing the best quality gas to make every meal special.",
     },
     {
-      image: "/assets/Quality.JPG",
+      image: "/assets/user.png",
       header: "Quality Gas Delivered to Your Doorstep",
       description:
         "Enjoy the convenience of home delivery with Alles Charis Gas. We bring high-quality LPG directly to your doorstep, so you never have to worry about running out. Call: +234 (0)702 5530 076",
