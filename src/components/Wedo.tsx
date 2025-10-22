@@ -65,7 +65,7 @@ const Wedo = () => {
         <WedoCard
           title="End User Consumption"
           subtitle="From cooking gas in households to fuel for industrial processes, Alles Charis ensures that LPG reaches the final consumer efficiently and safely. We focus on customer satisfaction by providing dependable service, ongoing support, and educational outreach on safe usage practices, promoting energy access and affordability at the grassroots level."
-          src="/assets/user.jpg"
+          src="/assets/user.png"
         />
 
         {/* Call to Action */}
