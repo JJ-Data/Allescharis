@@ -35,7 +35,7 @@ export interface ApiResponse {
 function BlogPage() {
   const { ref, inView } = useInView();
   const { user } = useAuth();
-  const isAdmin = user?.role === "ADMIN";
+  const isAdmin = ["ADMIN", "super-admin", "editor"].includes(user?.role || "");
 
   const {
     data,
