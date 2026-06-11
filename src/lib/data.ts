@@ -57,12 +57,12 @@ export const manager = [
     img: "/assets/px12.jpg",
     linkedin: "https://www.linkedin.com/in/samuel-ayotomiwa-oluwafemi/",
   },
-  {
-    name: "Adebanke Bamidele",
-    position: "Sales Manager",
-    img: "/assets/px4.jpg",
-    linkedin: "https://www.linkedin.com/in/adebanke-bamidele/",
-  },
+  // {
+  //   name: "Adebanke Bamidele",
+  //   position: "Sales Manager",
+  //   img: "/assets/px4.jpg",
+  //   linkedin: "https://www.linkedin.com/in/adebanke-bamidele/",
+  // },
   {
     name: "Mayowa Awoyemi",
     position: "Head of People",
