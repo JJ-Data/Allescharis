@@ -20,18 +20,18 @@ export const testimonialData = [
 ];
 
 export const manager = [
-  {
-    name: "Folajomi Adegbulugbe",
-    position: "Executive Director",
-    img: "/assets/px8.jpeg",
-    linkedin: "https://www.linkedin.com/in/folajomi/",
-  },
-  {
-    name: "Samuel Ogbole",
-    position: "Executive Director",
-    img: "/assets/Avatar_2.png",
-    linkedin: "https://www.linkedin.com/in/samuel-ogbole/",
-  },
+  // {
+  //   name: "Folajomi Adegbulugbe",
+  //   position: "Executive Director",
+  //   img: "/assets/px8.jpeg",
+  //   linkedin: "https://www.linkedin.com/in/folajomi/",
+  // },
+  // {
+  //   name: "Samuel Ogbole",
+  //   position: "Executive Director",
+  //   img: "/assets/Avatar_2.png",
+  //   linkedin: "https://www.linkedin.com/in/samuel-ogbole/",
+  // },
   {
     name: "Omolola Balogun",
     position: "General Manager Administration",
