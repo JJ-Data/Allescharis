@@ -99,8 +99,8 @@ const stations: Stations = {
       address:
         "Acgl gas terminal, omotosho before step down Benin/lagos expressway, Ore",
       phone: "07032627263, 08036612371",
-      lat: 7.196,
-      lng: 5.593,
+      lat: 6.7312204,
+      lng: 4.7201543,
     },
   ],
   "Port Harcourt": [
@@ -109,8 +109,8 @@ const stations: Stations = {
       address:
         "Okilton junction by Location- Iwofe Road, Opposite Livichun supermarket, Ada George.",
       phone: "09114764850",
-      lat: 6.7312204,
-      lng: 4.7201543,
+      lat: 4.8396,
+      lng: 6.9887,
     },
     {
       name: "Elelenwo",
