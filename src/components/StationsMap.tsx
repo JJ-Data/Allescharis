@@ -94,6 +94,14 @@ const stations: Stations = {
       lat: 7.196,
       lng: 5.593,
     },
+    {
+      name: "Ore",
+      address:
+        "Acgl gas terminal, omotosho before step down Benin/lagos expressway, Ore",
+      phone: "07032627263, 08036612371",
+      lat: 7.196,
+      lng: 5.593,
+    },
   ],
   "Port Harcourt": [
     {
@@ -101,8 +109,8 @@ const stations: Stations = {
       address:
         "Okilton junction by Location- Iwofe Road, Opposite Livichun supermarket, Ada George.",
       phone: "09114764850",
-      lat: 4.8396,
-      lng: 6.9887,
+      lat: 6.7312204,
+      lng: 4.7201543,
     },
     {
       name: "Elelenwo",
@@ -133,7 +141,7 @@ const MapUpdater: React.FC<{ station: Station }> = ({ station }) => {
 const StationsLeafletMap: React.FC = () => {
   const [selectedRegion, setSelectedRegion] = useState<string>("Abuja"); // Default to "Abuja"
   const [selectedStation, setSelectedStation] = useState<Station | null>(
-    stations["Abuja"][0]
+    stations["Abuja"][0],
   ); // Default to first station in Abuja
 
   const handleRegionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
