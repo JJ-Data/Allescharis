@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    {"source": "/locations", "destination": "/stations", "permanent": true}
+  ],
   "rewrites": [
     {"source": "/(.*)", "destination": "/"}
   ]
